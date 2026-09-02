@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Middleton Funeral Services | Compassionate Care in Minnesota</title>
+    <meta name="description" content="A compassionate, modern, fast-loading funeral services website built for lead generation, support, and seamless user experience." />
+    <meta property="og:title" content="Middleton Funeral Services | Compassionate Care in Minnesota" />
+    <meta property="og:description" content="A compassionate, modern, fast-loading funeral services website built for lead generation, support, and seamless user experience." />
+    <script>
+      // Prevent "Cannot set property fetch of #<Window> which has only a getter" error
+      try {
+        const desc = Object.getOwnPropertyDescriptor(window, 'fetch') || Object.getOwnPropertyDescriptor(Window.prototype, 'fetch');
+        if (desc && !desc.set) {
+          Object.defineProperty(window, 'fetch', {
+            get: desc.get,
+            set: function(val) {
+              console.warn('Ignored attempt to reassign window.fetch');
+            },
+            configurable: true
+          });
+        }
+      } catch (e) {
+        console.error(e);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
