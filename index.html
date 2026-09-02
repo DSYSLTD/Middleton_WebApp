@@ -8,21 +8,64 @@
     <meta property="og:title" content="Middleton Funeral Services | Compassionate Care in Minnesota" />
     <meta property="og:description" content="A compassionate, modern, fast-loading funeral services website built for lead generation, support, and seamless user experience." />
     <script>
-      // Prevent "Cannot set property fetch of #<Window> which has only a getter" error
-      try {
-        const desc = Object.getOwnPropertyDescriptor(window, 'fetch') || Object.getOwnPropertyDescriptor(Window.prototype, 'fetch');
-        if (desc && !desc.set) {
-          Object.defineProperty(window, 'fetch', {
-            get: desc.get,
-            set: function(val) {
-              console.warn('Ignored attempt to reassign window.fetch');
-            },
-            configurable: true
-          });
+      /**
+       * Safe fetch interceptor & polyfill guard
+       * Prevents "Cannot set property fetch of #<Window> which has only a getter"
+       * errors caused by host environments (cPanel, Cloudflare, browser extensions)
+       * attempting to monkeypatch window.fetch.
+       */
+      (function() {
+        try {
+          var nativeFetch = null;
+          if (typeof window.fetch === 'function') {
+            nativeFetch = window.fetch;
+          } else if (typeof Window !== 'undefined' && Window.prototype) {
+            try {
+              var protoDesc = Object.getOwnPropertyDescriptor(Window.prototype, 'fetch');
+              if (protoDesc) {
+                if (typeof protoDesc.value === 'function') {
+                  nativeFetch = protoDesc.value;
+                } else if (typeof protoDesc.get === 'function') {
+                  nativeFetch = protoDesc.get.call(window);
+                }
+              }
+            } catch (e) {}
+          }
+
+          var activeFetch = (typeof nativeFetch === 'function')
+            ? function() { return nativeFetch.apply(window, arguments); }
+            : function() { return Promise.reject(new Error('Fetch API is not available')); };
+
+          function defineSafeFetch(obj) {
+            if (!obj) return;
+            try {
+              Object.defineProperty(obj, 'fetch', {
+                get: function() {
+                  return activeFetch;
+                },
+                set: function(newFetch) {
+                  if (typeof newFetch === 'function') {
+                    activeFetch = function() { return newFetch.apply(window, arguments); };
+                  }
+                },
+                enumerable: true,
+                configurable: true
+              });
+            } catch (err) {
+              try {
+                obj.fetch = activeFetch;
+              } catch (e) {}
+            }
+          }
+
+          defineSafeFetch(window);
+          if (typeof Window !== 'undefined' && Window.prototype) {
+            defineSafeFetch(Window.prototype);
+          }
+        } catch (globalErr) {
+          console.warn('Safe fetch handler initialized with fallback');
         }
-      } catch (e) {
-        console.error(e);
-      }
+      })();
     </script>
   </head>
   <body>
