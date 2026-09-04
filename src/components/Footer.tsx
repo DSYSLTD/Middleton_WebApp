@@ -91,6 +91,7 @@ export default function Footer() {
                 { name: 'Sympathy Gifts', path: '/flowers', subdomain: 'sympathygifts' as const },
                 { name: 'Memorial Essentials', path: '/shop', subdomain: 'memorialessentials' as const },
                 { name: 'Register as Vendor', path: '/sell-with-us' },
+                { name: 'Client & Staff Portal', path: '/portal' },
               ].map((link, idx) => {
                 const targetUrl = link.subdomain 
                   ? getSubdomainUrl(link.subdomain, link.path)

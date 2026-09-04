@@ -589,10 +589,10 @@ export default function SubmitObituary() {
                 <UserPlus size={16} /> Register New Account
               </Link>
               <Link
-                to="/login"
+                to="/portal"
                 className="bg-gray-100 hover:bg-gray-200 text-gray-800 px-8 py-4 rounded-full font-black text-xs uppercase tracking-widest transition-all flex items-center justify-center gap-2"
               >
-                <LogIn size={16} /> Member / Admin Sign In
+                <LogIn size={16} /> Portal Sign In
               </Link>
             </div>
           </div>

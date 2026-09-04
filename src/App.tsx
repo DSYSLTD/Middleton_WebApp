@@ -129,6 +129,7 @@ export default function App() {
               <Route path="sympathy-gifts" element={<Flowers />} />
               <Route path="custom-order" element={<CustomOrder />} />
               <Route path="sell-with-us" element={<SellWithUs />} />
+              <Route path="portal" element={<Login />} />
               <Route path="login" element={<Login />} />
               <Route path="cms" element={<CmsDashboard />} />
               <Route path="dashboard" element={<CmsDashboard />} />

@@ -4,10 +4,12 @@ import CustomIcon from './CustomIcon';
 import TikTokIcon from './TikTokIcon';
 import PinterestIcon from './PinterestIcon';
 import { HEADER_FOOTER_LOGO } from '../constants/assets';
-import { ChevronDown, User, LogIn, ShoppingBag, Gift, Package, Store, Facebook, Instagram, Youtube, Calendar, MapPin } from 'lucide-react';
+import { ChevronDown, User, ShoppingBag, Gift, Package, Store, Facebook, Instagram, Youtube, Calendar, MapPin } from 'lucide-react';
 import { getSubdomainUrl } from '../utils/subdomain';
+import { useAuth } from '../context/AuthContext';
 
 export default function Navbar() {
+  const { user } = useAuth();
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
   const [isTopShopOpen, setIsTopShopOpen] = useState(false);
@@ -81,38 +83,42 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 w-full flex flex-col">
       {/* Top Bar */}
       <div className="bg-[#411548] text-white py-2 hidden md:block w-full text-xs font-medium tracking-wide border-b border-white/10">
-        <div className="container mx-auto px-4 flex items-center justify-between gap-4">
-          <div className="flex items-center space-x-4 lg:space-x-5 justify-start shrink-0">
-            <span className="flex items-center gap-2 font-bold"><CustomIcon size={14} variant="white" /> IMMEDIATE ASSISTANCE 24/7</span>
-            <div className="h-3 w-[1px] bg-white/20"></div>
-            <a href="tel:9524862871" className="flex items-center gap-2 hover:text-gray-300 transition-colors font-bold uppercase tracking-widest underline underline-offset-4 decoration-white/30">952 486-2871</a>
+        <div className="container mx-auto px-4 flex items-center justify-between gap-3 lg:gap-4">
+          <div className="flex items-center space-x-3 lg:space-x-4 justify-start shrink-0">
+            <span className="flex items-center gap-1.5 font-bold text-[11px] lg:text-xs tracking-wider"><CustomIcon size={14} variant="white" /> IMMEDIATE ASSISTANCE 24/7</span>
+            <div className="h-3.5 w-[2px] bg-white/45 rounded-full shrink-0"></div>
+            <a href="tel:9524862871" className="flex items-center gap-1.5 hover:text-gray-300 transition-colors font-bold uppercase tracking-widest text-[11px] lg:text-xs underline underline-offset-4 decoration-white/30">952 486-2871</a>
           </div>
 
           {/* Location on Top Bar */}
-          <div className="flex items-center justify-center space-x-4 shrink-0">
+          <div className="hidden lg:flex items-center justify-center space-x-2.5 lg:space-x-3 2xl:space-x-3.5 shrink-0">
+            {/* Separator between Phone Number and Location */}
+            <div className="h-3.5 w-[2px] bg-white/45 rounded-full shrink-0"></div>
             <a 
               href="https://maps.google.com/?q=14850+Garret+Ave,+Apple+Valley,+MN+55124" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="flex items-center gap-1.5 hover:text-gray-200 transition-colors text-[11px] font-semibold tracking-normal text-white/95 group"
+              className="flex items-center gap-1.5 hover:text-gray-300 transition-colors uppercase tracking-widest font-black text-[9px] text-white shrink-0 group"
               title="View Apple Valley Location on Google Maps"
             >
-              <MapPin size={13} className="text-white/80 group-hover:text-white shrink-0" />
-              <span className="hidden lg:inline">14850 Garret Ave, Apple Valley MN 55124</span>
-              <span className="lg:hidden">Apple Valley, MN 55124</span>
+              <MapPin size={10} className="text-white/80 group-hover:text-white shrink-0 transition-colors" />
+              <span className="hidden xl:inline">14850 Garret Ave, Apple Valley MN 55124</span>
+              <span className="xl:hidden">Apple Valley, MN 55124</span>
             </a>
-            <div className="h-3 w-[1px] bg-white/20 hidden xl:block"></div>
+            {/* Separator between Location and Marketplace */}
+            <div className="h-3.5 w-[2px] bg-white/45 rounded-full shrink-0"></div>
             {/* Social Media Icons */}
-            <div className="hidden xl:flex items-center space-x-3 text-white/80">
+            <div className="hidden 2xl:flex items-center space-x-3 text-white/80">
               <a href="https://www.facebook.com/middletonfuneralservicesllc/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" title="Facebook"><Facebook size={14} /></a>
               <a href="https://www.instagram.com/middletonfuneralservicesllc/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" title="Instagram"><Instagram size={14} /></a>
               <a href="https://www.tiktok.com/@middletonfuneralservices" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" title="TikTok"><TikTokIcon size={14} /></a>
               <a href="https://www.pinterest.com/MiddletonFuneralServices/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" title="Pinterest"><PinterestIcon size={14} /></a>
               <a href="https://www.youtube.com/@Middletonfuneralservicesllc" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" title="YouTube"><Youtube size={14} /></a>
+              <div className="h-3.5 w-[2px] bg-white/45 rounded-full shrink-0"></div>
             </div>
           </div>
 
-          <div className="flex items-center justify-end space-x-3 2xl:space-x-4 uppercase tracking-widest font-black text-[9px] whitespace-nowrap shrink-0">
+          <div className="flex items-center justify-end space-x-2.5 lg:space-x-3 2xl:space-x-3.5 uppercase tracking-widest font-black text-[9px] whitespace-nowrap shrink-0">
             {/* Shop Categories Dropdown in Top Bar */}
             <div 
               ref={shopMenuRef}
@@ -185,15 +191,32 @@ export default function Navbar() {
               )}
             </div>
 
-            <div className="h-2 w-[1px] bg-white/20 shrink-0"></div>
+            <div className="h-3.5 w-[2px] bg-white/45 rounded-full shrink-0"></div>
             <Link to="/submit-obituary" className="hover:text-gray-300 transition-colors whitespace-nowrap shrink-0 text-white font-black flex items-center gap-1">
               <Calendar size={10} className="shrink-0" /> Submit Obituary
             </Link>
-            <div className="h-2 w-[1px] bg-white/20 shrink-0"></div>
-            <Link to="/join-support-group" className="hover:text-gray-300 transition-colors whitespace-nowrap shrink-0 text-white font-black">Join Support Group</Link>
-            <div className="h-2 w-[1px] bg-white/20 shrink-0"></div>
-            <Link to="/login" className="flex items-center gap-1.5 hover:text-gray-300 transition-colors whitespace-nowrap shrink-0">
-              <LogIn size={10} className="shrink-0" /> Login / Register
+            <div className="h-3.5 w-[2px] bg-white/45 rounded-full shrink-0"></div>
+            <Link to="/join-support-group" className="hover:text-gray-300 transition-colors whitespace-nowrap shrink-0 text-white font-black">
+              Join Support Group
+            </Link>
+            <div className="h-3.5 w-[2px] bg-white/45 rounded-full shrink-0"></div>
+            <Link 
+              to={user ? (user.role === 'superadmin' ? '/cms' : '/portal') : '/portal'} 
+              className="flex items-center gap-1.5 bg-white/10 hover:bg-white/20 hover:border-white/40 border border-white/25 px-3 py-1 rounded-full text-white font-black uppercase tracking-wider text-[9px] transition-all shadow-sm group"
+              title={user ? `Signed in as ${user.name} — Open Portal` : 'Client & Staff Portal'}
+            >
+              {user ? (
+                <>
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shrink-0 animate-pulse"></span>
+                  <User size={10} className="shrink-0 text-white" />
+                  <span>Portal</span>
+                </>
+              ) : (
+                <>
+                  <User size={10} className="shrink-0 text-white/80 group-hover:text-white transition-colors" />
+                  <span>Portal</span>
+                </>
+              )}
             </Link>
           </div>
         </div>
@@ -394,8 +417,38 @@ export default function Navbar() {
                 </div>
               </div>
 
+              {/* Portal Access Button for Mobile */}
+              <div className="bg-gradient-to-br from-[#411548] to-[#2a0c30] p-6 rounded-[2.5rem] text-white shadow-xl">
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-[9px] font-black uppercase tracking-[0.3em] text-purple-200">Secure Access</span>
+                  {user && (
+                    <span className="inline-flex items-center gap-1.5 text-[9px] font-bold uppercase tracking-wider bg-emerald-500/20 text-emerald-300 px-2.5 py-0.5 rounded-full border border-emerald-500/30">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Active Session
+                    </span>
+                  )}
+                </div>
+                <Link
+                  to={user ? (user.role === 'superadmin' ? '/cms' : '/portal') : '/portal'}
+                  className="flex items-center justify-between p-4 bg-white/10 hover:bg-white/15 border border-white/20 rounded-2xl transition-all group"
+                  onClick={() => setIsOpen(false)}
+                >
+                  <div className="flex items-center gap-3.5">
+                    <div className="w-10 h-10 rounded-xl bg-white text-[#411548] flex items-center justify-center font-bold shrink-0 shadow-sm">
+                      <User size={18} />
+                    </div>
+                    <div className="flex flex-col text-left">
+                      <span className="text-xs font-black uppercase tracking-tight text-white">Client & Staff Portal</span>
+                      <span className="text-[9.5px] text-white/70 font-medium">
+                        {user ? `Signed in as ${user.name}` : 'Family, Member & Staff Portal'}
+                      </span>
+                    </div>
+                  </div>
+                  <ChevronDown size={14} className="-rotate-90 text-white/70 group-hover:text-white transition-colors" />
+                </Link>
+              </div>
+
               <div className="space-y-6 bg-gray-50 p-8 rounded-[3.5rem] border border-gray-100">
-                <span className="text-[10px] font-black uppercase tracking-[0.5em] text-[#411548]/30 ml-4">Marketplace & Portal</span>
+                <span className="text-[10px] font-black uppercase tracking-[0.5em] text-[#411548]/30 ml-4">Marketplace Collections</span>
                 <div className="grid grid-cols-1 gap-4">
                   {shopSubLinks.map((sub) => {
                     const targetPath = 'subdomain' in sub && sub.subdomain 

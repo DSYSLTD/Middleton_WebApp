@@ -121,10 +121,10 @@ export default function Login() {
               </div>
             </Link>
             <h1 className="text-3xl md:text-5xl font-serif font-black uppercase text-white mb-2 tracking-tight">
-              Staff & Portal <span className="text-white/40 italic font-light lowercase">Login</span>
+              Client & Staff <span className="text-white/40 italic font-light lowercase">Portal</span>
             </h1>
             <p className="text-white/80 text-sm md:text-base font-light max-w-2xl mx-auto">
-              Access Blogging CMS, Vendor Marketplace, or Executive Administration controls.
+              Secure gateway for Registered Families, Blogging CMS Editors, Vendor Partners, and Executive Directors.
             </p>
           </motion.div>
         </div>

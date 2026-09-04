@@ -330,8 +330,8 @@ export default function Register() {
             <div className="mt-8 text-center border-t border-gray-100 pt-6">
               <p className="text-xs text-gray-500">
                 Already registered?{' '}
-                <Link to="/login" className="text-[#411548] font-bold underline">
-                  Log in here
+                <Link to="/portal" className="text-[#411548] font-bold underline">
+                  Access Portal here
                 </Link>
               </p>
             </div>
