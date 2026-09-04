@@ -1,3 +1,4 @@
+import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { ModalProvider } from './context/ModalContext';
 import { AuthProvider } from './context/AuthContext';
@@ -46,13 +47,11 @@ import LegalHeritagePlanning from './pages/LegalHeritagePlanning';
 import CmsDashboard from './pages/CmsDashboard';
 import Careers from './pages/Careers';
 
-// Subdomain route mapping
-const subdomainPages: Record<string, string> = {
-  "blog.middletonfuneralservices.com": "/blog",
-  "flowers.middletonfuneralservices.com": "/flowers",
-  "shop.middletonfuneralservices.com": "/shop",
-  "sympathygifts.middletonfuneralservices.com": "/flowers",
-  "memorialessentials.middletonfuneralservices.com": "/shop",
+// Subdomain page selection mapping
+const subdomainPages: Record<string, React.ReactElement> = {
+  "blog.middletonfuneralservices.com": <Blog />,
+  "flowers.middletonfuneralservices.com": <Flowers />,
+  "shop.middletonfuneralservices.com": <Shop />,
 };
 
 // Migrate any legacy hash routes to clean URLs
@@ -62,12 +61,28 @@ if (typeof window !== 'undefined' && window.location.hash.startsWith('#/')) {
 }
 
 export default function App() {
-  const currentHostname = typeof window !== 'undefined' ? window.location.hostname.toLowerCase() : '';
-  const subdomainRoute =
-    subdomainPages[currentHostname] ||
-    (currentHostname.startsWith('blog.') ? '/blog' : null) ||
-    (currentHostname.startsWith('flowers.') || currentHostname.startsWith('sympathygifts.') ? '/flowers' : null) ||
-    (currentHostname.startsWith('shop.') || currentHostname.startsWith('memorialessentials.') ? '/shop' : null);
+  const hostname = typeof window !== 'undefined' ? window.location.hostname : '';
+  const subdomainPage =
+    subdomainPages[hostname] ||
+    subdomainPages[hostname.toLowerCase()] ||
+    (hostname.toLowerCase().startsWith('blog.') ? <Blog /> : null) ||
+    (hostname.toLowerCase().startsWith('flowers.') || hostname.toLowerCase().startsWith('sympathygifts.') ? <Flowers /> : null) ||
+    (hostname.toLowerCase().startsWith('shop.') || hostname.toLowerCase().startsWith('memorialessentials.') ? <Shop /> : null);
+
+  if (subdomainPage) {
+    return (
+      <AuthProvider>
+        <ModalProvider>
+          <BrowserRouter>
+            <ScrollToTop />
+            <Layout>
+              {subdomainPage}
+            </Layout>
+          </BrowserRouter>
+        </ModalProvider>
+      </AuthProvider>
+    );
+  }
 
   return (
     <AuthProvider>
@@ -76,16 +91,10 @@ export default function App() {
           <ScrollToTop />
           <Routes>
             <Route path="/" element={<Layout />}>
-              <Route
-                index
-                element={
-                  subdomainRoute ? (
-                    <Navigate to={subdomainRoute} replace />
-                  ) : (
-                    <Home />
-                  )
-                }
-              />
+              <Route index element={<Home />} />
+              <Route path="blog" element={<Blog />} />
+              <Route path="flowers" element={<Flowers />} />
+              <Route path="shop" element={<Shop />} />
               <Route path="how-we-work" element={<HowWeWork />} />
               <Route path="book-appointment" element={<BookAppointment />} />
               <Route path="services" element={<Services />} />

@@ -2,35 +2,30 @@ const express = require("express");
 const path = require("path");
 
 const app = express();
-const port = process.env.PORT || 3000;
-
+const PORT = process.env.PORT || 3000;
 const distPath = path.join(__dirname, "dist");
+
+const subdomainPages = {
+  "blog.middletonfuneralservices.com": "/blog",
+  "flowers.middletonfuneralservices.com": "/flowers",
+  "shop.middletonfuneralservices.com": "/shop"
+};
 
 app.use(express.static(distPath));
 
-const subdomainRoutes = {
-  "blog.middletonfuneralservices.com": "/blog",
-  "flowers.middletonfuneralservices.com": "/flowers",
-  "shop.middletonfuneralservices.com": "/shop",
-};
-
-// Keep the subdomain mapping available to the frontend.
 app.get("/", (req, res, next) => {
-  const route = subdomainRoutes[req.hostname];
-
-  if (route) {
-    res.sendFile(path.join(distPath, "index.html"));
-    return;
+  if (subdomainPages[req.hostname]) {
+    return res.sendFile(path.join(distPath, "index.html"));
   }
 
   next();
 });
 
-// Required for React Router clean URLs such as /blog and /shop.
+// Supports clean URLs such as /blog, /flowers and /shop.
 app.get(/.*/, (req, res) => {
   res.sendFile(path.join(distPath, "index.html"));
 });
 
-app.listen(port, "0.0.0.0", () => {
-  console.log(`Server running on port ${port}`);
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`Application running on port ${PORT}`);
 });

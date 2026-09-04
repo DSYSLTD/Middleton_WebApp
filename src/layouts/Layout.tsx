@@ -1,3 +1,4 @@
+import React from 'react';
 import { Outlet, Link, useLocation } from 'react-router-dom';
 import { Phone, MessageCircle, ArrowRight, Calendar } from 'lucide-react';
 import Navbar from '../components/Navbar';
@@ -6,7 +7,7 @@ import PreFooterContact from '../components/PreFooterContact';
 import CookieConsent from '../components/CookieConsent';
 import CustomIcon from '../components/CustomIcon';
 
-export default function Layout() {
+export default function Layout({ children }: { children?: React.ReactNode } = {}) {
   const location = useLocation();
   const isPrePlanningPage = location.pathname === '/pre-planning';
   const isContactPage = location.pathname === '/contact';
@@ -18,7 +19,7 @@ export default function Layout() {
     <div className="flex flex-col min-h-screen relative overflow-x-hidden">
       <Navbar />
       <main className={`flex-grow ${isShopOrFlowersPage ? '' : 'pb-16 md:pb-0'}`}>
-        <Outlet />
+        {children || <Outlet />}
       </main>
 
       {!isPrePlanningPage && (
