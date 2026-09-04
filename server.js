@@ -10,23 +10,18 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const DIST_DIR = path.resolve(__dirname, 'dist');
 
-// Serve static assets from the Vite build directory with long cache expiration
-app.use(
-  express.static(DIST_DIR, {
-    maxAge: '1y',
-    immutable: true,
-    index: false,
-  })
-);
+// Serve static assets from dist
+app.use(express.static("dist"));
+app.use(express.static(path.resolve(__dirname, 'dist')));
 
 // Optional API / Health check endpoint
 app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', timestamp: new Date().toISOString() });
 });
 
-// SPA fallback: Serve index.html for all non-static GET requests
-app.get('*', (req, res) => {
-  const indexPath = path.join(DIST_DIR, 'index.html');
+// SPA fallback for clean URLs: serve index.html for all routes
+app.get("*", (req, res) => {
+  const indexPath = path.resolve("dist/index.html");
   if (fs.existsSync(indexPath)) {
     res.sendFile(indexPath);
   } else {

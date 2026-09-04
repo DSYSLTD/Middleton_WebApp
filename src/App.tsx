@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { HashRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ModalProvider } from './context/ModalContext';
 import { AuthProvider } from './context/AuthContext';
 import Layout from './layouts/Layout';
@@ -48,17 +48,10 @@ import CmsDashboard from './pages/CmsDashboard';
 import Careers from './pages/Careers';
 import { getActiveSubdomain, SubdomainType } from './utils/subdomain';
 
-// Auto-sync pathname into hash route for static/Hostinger Apache SPA environments
-if (typeof window !== 'undefined') {
-  const pathname = window.location.pathname;
-  if (
-    pathname &&
-    pathname !== '/' &&
-    !pathname.includes('.') &&
-    !window.location.hash
-  ) {
-    window.location.replace('/#' + pathname + window.location.search);
-  }
+// Migrate any legacy hash routes to clean URLs
+if (typeof window !== 'undefined' && window.location.hash.startsWith('#/')) {
+  const cleanPath = window.location.hash.slice(1);
+  window.history.replaceState(null, '', cleanPath);
 }
 
 function IndexRoute() {
@@ -92,7 +85,7 @@ export default function App() {
   return (
     <AuthProvider>
       <ModalProvider>
-        <HashRouter>
+        <BrowserRouter>
           <ScrollToTop />
           <Routes>
             <Route path="/" element={<Layout />}>
@@ -143,7 +136,7 @@ export default function App() {
               <Route path="regulatory-disclosure" element={<RegulatoryDisclosure />} />
             </Route>
           </Routes>
-        </HashRouter>
+        </BrowserRouter>
       </ModalProvider>
     </AuthProvider>
   );

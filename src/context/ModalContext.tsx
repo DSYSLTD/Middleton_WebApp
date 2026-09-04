@@ -115,7 +115,7 @@ export function ModalProvider({ children }: { children: React.ReactNode }) {
     if (initialPackageDetails) params.set('details', initialPackageDetails);
 
     const queryString = params.toString();
-    window.location.hash = `#/custom-order${queryString ? '?' + queryString : ''}`;
+    window.location.href = `/custom-order${queryString ? '?' + queryString : ''}`;
   };
 
   const openVendorAppModal = () => {
