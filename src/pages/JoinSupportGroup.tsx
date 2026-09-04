@@ -377,7 +377,7 @@ export default function JoinSupportGroup() {
                   <p><strong className="text-gray-900">Circle:</strong> {formData.groupFocus}</p>
                   <p><strong className="text-gray-900">Format:</strong> {formData.format}</p>
                   <p><strong className="text-gray-900">Session Window:</strong> {formData.preferredDay}</p>
-                  <p><strong className="text-gray-900">Location:</strong> 24173 Williams Rd, Rogers, MN 55374</p>
+                  <p><strong className="text-gray-900">Location:</strong> 14850 Garret Ave, Apple Valley, MN 55124</p>
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">

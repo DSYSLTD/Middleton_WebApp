@@ -104,8 +104,8 @@ export default function Contact() {
               <h3 className="text-2xl font-black text-[#411548] mb-4 font-serif uppercase tracking-tight text-[#411548]">Our Office</h3>
               <p className="text-black/60 text-lg font-light mb-10 leading-loose">
                 Middleton Funeral Home<br/>
-                24173 Williams Rd.<br/>
-                Rogers 55374
+                14850 Garret Ave.<br/>
+                Apple Valley MN 55124
               </p>
               <div className="flex flex-col gap-6 mt-auto">
                  <div className="flex items-center gap-4 text-sm font-black uppercase tracking-widest text-black/40">
@@ -306,16 +306,16 @@ export default function Contact() {
         <div className="absolute inset-0 bg-gray-200/50 flex items-center justify-center">
             <div className="text-center">
                <MapPin size={48} className="text-gray-300 mx-auto mb-4" />
-               <p className="text-gray-400 font-bold text-xs uppercase tracking-widest">Rogers, MN Location Map</p>
+               <p className="text-gray-400 font-bold text-xs uppercase tracking-widest">Apple Valley, MN Location Map</p>
             </div>
         </div>
         <div className="absolute top-10 left-10 bg-white p-8 rounded-3xl shadow-xl border border-gray-100 max-w-sm hidden md:block">
            <h3 className="font-bold text-[#411548] mb-2 uppercase tracking-tight">Directions & Parking</h3>
            <p className="text-xs text-gray-500 font-light leading-relaxed mb-4">
-              We provide ample complimentary parking at our main entrance at 24173 Williams Rd, Rogers, MN.
+              We provide ample complimentary parking at our main entrance at 14850 Garret Ave, Apple Valley, MN 55124.
            </p>
            <a 
-            href="https://maps.google.com/?q=24173+Williams+Rd,+Rogers,+MN+55374"
+            href="https://maps.google.com/?q=14850+Garret+Ave,+Apple+Valley,+MN+55124"
             target="_blank"
             rel="noopener noreferrer"
             className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#411548] flex items-center gap-2 hover:gap-3 transition-all"

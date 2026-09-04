@@ -4,7 +4,7 @@ import CustomIcon from './CustomIcon';
 import TikTokIcon from './TikTokIcon';
 import PinterestIcon from './PinterestIcon';
 import { HEADER_FOOTER_LOGO } from '../constants/assets';
-import { ChevronDown, User, LogIn, ShoppingBag, Gift, Package, Store, Facebook, Instagram, Youtube, Calendar } from 'lucide-react';
+import { ChevronDown, User, LogIn, ShoppingBag, Gift, Package, Store, Facebook, Instagram, Youtube, Calendar, MapPin } from 'lucide-react';
 import { getSubdomainUrl } from '../utils/subdomain';
 
 export default function Navbar() {
@@ -81,23 +81,38 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 w-full flex flex-col">
       {/* Top Bar */}
       <div className="bg-[#411548] text-white py-2 hidden md:block w-full text-xs font-medium tracking-wide border-b border-white/10">
-        <div className="container mx-auto px-4 grid grid-cols-3 items-center">
-          <div className="flex items-center space-x-6 justify-start">
+        <div className="container mx-auto px-4 flex items-center justify-between gap-4">
+          <div className="flex items-center space-x-4 lg:space-x-5 justify-start shrink-0">
             <span className="flex items-center gap-2 font-bold"><CustomIcon size={14} variant="white" /> IMMEDIATE ASSISTANCE 24/7</span>
             <div className="h-3 w-[1px] bg-white/20"></div>
             <a href="tel:9524862871" className="flex items-center gap-2 hover:text-gray-300 transition-colors font-bold uppercase tracking-widest underline underline-offset-4 decoration-white/30">952 486-2871</a>
           </div>
 
-          {/* Social Media Icons */}
-          <div className="flex items-center justify-start pl-6 lg:pl-10 space-x-3.5 lg:space-x-4 text-white/80">
-            <a href="https://www.facebook.com/middletonfuneralservicesllc/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" title="Facebook"><Facebook size={14} /></a>
-            <a href="https://www.instagram.com/middletonfuneralservicesllc/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" title="Instagram"><Instagram size={14} /></a>
-            <a href="https://www.tiktok.com/@middletonfuneralservices" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" title="TikTok"><TikTokIcon size={14} /></a>
-            <a href="https://www.pinterest.com/MiddletonFuneralServices/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" title="Pinterest"><PinterestIcon size={14} /></a>
-            <a href="https://www.youtube.com/@Middletonfuneralservicesllc" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" title="YouTube"><Youtube size={14} /></a>
+          {/* Location on Top Bar */}
+          <div className="flex items-center justify-center space-x-4 shrink-0">
+            <a 
+              href="https://maps.google.com/?q=14850+Garret+Ave,+Apple+Valley,+MN+55124" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="flex items-center gap-1.5 hover:text-gray-200 transition-colors text-[11px] font-semibold tracking-normal text-white/95 group"
+              title="View Apple Valley Location on Google Maps"
+            >
+              <MapPin size={13} className="text-white/80 group-hover:text-white shrink-0" />
+              <span className="hidden lg:inline">14850 Garret Ave, Apple Valley MN 55124</span>
+              <span className="lg:hidden">Apple Valley, MN 55124</span>
+            </a>
+            <div className="h-3 w-[1px] bg-white/20 hidden xl:block"></div>
+            {/* Social Media Icons */}
+            <div className="hidden xl:flex items-center space-x-3 text-white/80">
+              <a href="https://www.facebook.com/middletonfuneralservicesllc/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" title="Facebook"><Facebook size={14} /></a>
+              <a href="https://www.instagram.com/middletonfuneralservicesllc/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" title="Instagram"><Instagram size={14} /></a>
+              <a href="https://www.tiktok.com/@middletonfuneralservices" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" title="TikTok"><TikTokIcon size={14} /></a>
+              <a href="https://www.pinterest.com/MiddletonFuneralServices/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" title="Pinterest"><PinterestIcon size={14} /></a>
+              <a href="https://www.youtube.com/@Middletonfuneralservicesllc" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" title="YouTube"><Youtube size={14} /></a>
+            </div>
           </div>
 
-          <div className="flex items-center justify-end space-x-3 2xl:space-x-4 uppercase tracking-widest font-black text-[9px] whitespace-nowrap">
+          <div className="flex items-center justify-end space-x-3 2xl:space-x-4 uppercase tracking-widest font-black text-[9px] whitespace-nowrap shrink-0">
             {/* Shop Categories Dropdown in Top Bar */}
             <div 
               ref={shopMenuRef}
@@ -427,10 +442,19 @@ export default function Navbar() {
                 </div>
               </div>
 
-              <div className="p-6 flex flex-col items-center gap-4 bg-[#411548] rounded-[3rem] text-white">
+              <div className="p-6 flex flex-col items-center gap-4 bg-[#411548] rounded-[3rem] text-white text-center">
                  <span className="text-[10px] font-black uppercase tracking-[0.4em] opacity-40">24/7 Support Line</span>
                  <a href="tel:9524862871" className="flex items-center gap-4 font-serif text-3xl font-black">
                    952.486.2871
+                 </a>
+                 <a 
+                   href="https://maps.google.com/?q=14850+Garret+Ave,+Apple+Valley,+MN+55124" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   className="flex items-center gap-2 text-xs text-white/90 hover:text-white transition-colors pt-3 border-t border-white/10 w-full justify-center"
+                 >
+                   <MapPin size={14} className="text-white/70 shrink-0" />
+                   <span>14850 Garret Ave, Apple Valley MN 55124</span>
                  </a>
               </div>
             </div>

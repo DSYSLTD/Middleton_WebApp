@@ -25,14 +25,14 @@ export default function BookAppointment() {
     customServiceFocus: '',
     legalSubOption: 'Death Certificate Processing',
     supportGroupSubOption: 'Support Group Referrals',
-    meetingFormat: 'In-Person at Rogers, MN Funeral Home',
+    meetingFormat: 'In-Person at Apple Valley, MN Funeral Home',
     appointmentDate: new Date().toISOString().split('T')[0],
     appointmentTime: '10:00 AM',
     fullName: '',
     phone: '',
     email: '',
     lovedOneName: '',
-    location: 'Rogers / Twin Cities, MN',
+    location: 'Apple Valley / Twin Cities, MN',
     notes: '',
   });
 
@@ -76,7 +76,7 @@ export default function BookAppointment() {
   ];
 
   const meetingFormats = [
-    'In-Person at Rogers, MN Funeral Home',
+    'In-Person at Apple Valley, MN Funeral Home',
     'Virtual Video Conference (Zoom / Google Meet)',
     'Phone Consultation',
     'Home Visit (Within Twin Cities Metro)'

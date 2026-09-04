@@ -106,7 +106,7 @@ export default function AboutUs() {
     { 
       step: "09", 
       title: "Grief Support & Aftercare", 
-      desc: "Our commitment extends well beyond the service. We provide ongoing grief counselling in Rogers and surrounding areas; access to support groups and online bereavement communities; guidance on bereavement leave and legal matters; and annual memorial planning for tributes and remembrance gatherings.",
+      desc: "Our commitment extends well beyond the service. We provide ongoing grief counselling in Apple Valley and surrounding areas; access to support groups and online bereavement communities; guidance on bereavement leave and legal matters; and annual memorial planning for tributes and remembrance gatherings.",
       icon: <CustomIcon size={28} />
     }
   ];

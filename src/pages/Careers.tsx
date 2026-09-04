@@ -50,7 +50,7 @@ export default function Careers() {
         id: 1,
         title: 'Licensed Funeral Director & Mortician',
         department: 'Mortuary Care',
-        location: 'Rogers & Twin Cities Metro, MN',
+        location: 'Apple Valley & Twin Cities Metro, MN',
         type: 'Full-Time',
         salary: '$75,000 - $95,000 / yr',
         experience: '3+ Years Required',
@@ -74,7 +74,7 @@ export default function Careers() {
         id: 2,
         title: 'Certified Grief Counselor & Family Care Specialist',
         department: 'Family Guidance',
-        location: 'Rogers, MN (On-Site & Virtual)',
+        location: 'Apple Valley, MN (On-Site & Virtual)',
         type: 'Full-Time',
         salary: '$65,000 - $80,000 / yr',
         experience: '2+ Years Guidance Experience',
@@ -97,7 +97,7 @@ export default function Careers() {
         id: 3,
         title: 'Funeral Assistant & Administrative Care Officer',
         department: 'Administration',
-        location: 'Rogers, MN',
+        location: 'Apple Valley, MN',
         type: 'Full-Time',
         salary: '$22.00 - $28.00 / hr',
         experience: '1+ Years Office / Client Services',
@@ -143,7 +143,7 @@ export default function Careers() {
         id: 5,
         title: 'Sympathy Floral & Memorial Keepsake Designer',
         department: 'Floral & Decor',
-        location: 'Rogers, MN',
+        location: 'Apple Valley, MN',
         type: 'Part-Time',
         salary: '$20.00 - $26.00 / hr',
         experience: 'Floral Arrangement Experience',
@@ -300,7 +300,7 @@ export default function Careers() {
                 </div>
                 <h3 className="font-serif font-bold text-lg text-[#411548] mb-2">Community Impact</h3>
                 <p className="text-xs text-gray-600 font-light leading-relaxed">
-                  Directly serve families across Rogers and the Twin Cities, guiding them through moments of deep emotional need.
+                  Directly serve families across Apple Valley and the Twin Cities, guiding them through moments of deep emotional need.
                 </p>
               </div>
             </div>

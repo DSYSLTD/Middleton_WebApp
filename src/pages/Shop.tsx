@@ -1225,7 +1225,7 @@ export default function Shop() {
                 How quickly can tribute packages and personalized items be delivered?
               </h3>
               <p className="text-xs text-slate-600 font-light leading-relaxed mb-4">
-                Standard printed materials, personalized candles, and floral sprays can be prepared within 24 to 48 hours for direct delivery to funeral chapels, churches, or cemetery pavilions across Rogers and the Twin Cities metro area.
+                Standard printed materials, personalized candles, and floral sprays can be prepared within 24 to 48 hours for direct delivery to funeral chapels, churches, or cemetery pavilions across Apple Valley and the Twin Cities metro area.
               </p>
               <Link
                 to="/book-appointment"

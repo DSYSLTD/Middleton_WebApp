@@ -56,9 +56,9 @@ export default function RegulatoryDisclosure() {
               Middleton Funeral Services is a licensed funeral establishment operating strictly under Minnesota Statute Chapter 149A and overseen by the Minnesota Department of Health, Mortuary Science Section.
             </p>
             <ul className="list-disc pl-6 space-y-2">
-              <li>Establishment License No: <strong>MN-FS-55374</strong></li>
+              <li>Establishment License No: <strong>MN-FS-55124</strong></li>
               <li>Supervising Licensed Mortician: <strong>Mwansa Kamangala</strong> (License No: <strong>MN-L-88201</strong>)</li>
-              <li>Facility Address: 24173 Williams Rd, Rogers, MN 55374</li>
+              <li>Facility Address: 14850 Garret Ave, Apple Valley, MN 55124</li>
             </ul>
           </div>
 

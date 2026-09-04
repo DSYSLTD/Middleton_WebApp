@@ -97,7 +97,7 @@ export default function PrivacyPolicy() {
             </p>
             <div className="bg-gray-50 p-6 rounded-2xl border border-gray-200 text-base">
               <p className="font-bold text-[#411548]">Middleton Funeral Services — Privacy Office</p>
-              <p>24173 Williams Rd, Rogers, MN 55374</p>
+              <p>14850 Garret Ave, Apple Valley, MN 55124</p>
               <p>Email: <a href="mailto:inquiries@middletonfunerals.com" className="underline font-semibold text-[#411548]">inquiries@middletonfunerals.com</a></p>
               <p>Phone: <a href="tel:9524862871" className="underline font-semibold text-[#411548]">952 486-2871</a></p>
             </div>

@@ -17,8 +17,8 @@ export default function PreFooterContact() {
     {
       icon: <MapPin size={20} className="text-[#411548]" />,
       label: "Address:",
-      value: "24173 Williams Rd. Rogers 55374",
-      href: "https://maps.google.com/?q=24173+Williams+Rd.+Rogers+55374"
+      value: "14850 Garret Ave, Apple Valley MN 55124",
+      href: "https://maps.google.com/?q=14850+Garret+Ave,+Apple+Valley,+MN+55124"
     }
   ];
 

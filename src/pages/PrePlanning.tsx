@@ -403,7 +403,7 @@ export default function PrePlanning() {
                                 type="text" value={formData.address} 
                                 onChange={e => setFormData({...formData, address: e.target.value})} 
                                 className="w-full bg-white border-2 border-gray-300 rounded-2xl px-6 py-4 text-sm font-semibold text-gray-900 focus:border-[#411548] focus:bg-white shadow-sm transition-all" 
-                                placeholder="123 Harmony Lane, Rogers, MN"
+                                placeholder="123 Harmony Lane, Apple Valley, MN"
                               />
                            </div>
                            <div>

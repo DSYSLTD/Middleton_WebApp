@@ -145,7 +145,7 @@ export default function HowWeWork() {
       icon: Users,
       title: '9. Grief Support & Aftercare',
       subtitle: 'Continuous Bereavement & Community Care',
-      content: 'Our commitment extends well beyond the day of the service. We provide ongoing grief counseling in Rogers and surrounding Twin Cities communities, access to peer support circles, bereavement leave guidance, and annual memorial gatherings.',
+      content: 'Our commitment extends well beyond the day of the service. We provide ongoing grief counseling in Apple Valley and surrounding Twin Cities communities, access to peer support circles, bereavement leave guidance, and annual memorial gatherings.',
       highlight: 'Aftercare & Ongoing Support:',
       bullets: [
         'Licensed 1-on-1 grief therapist referrals',

@@ -148,9 +148,9 @@ export default function CmsDashboard() {
       }
     }
     return [
-      { id: 1, title: 'Licensed Funeral Director & Mortician', department: 'Mortuary Care', location: 'Rogers, MN', type: 'Full-Time', salary: '$75k - $95k', status: 'Active', description: 'Oversee ceremonial coordination, embalming, care arrangements, and funeral service execution.', postedDate: '2026-08-20' },
-      { id: 2, title: 'Certified Grief Counselor', department: 'Family Guidance', location: 'Rogers, MN', type: 'Full-Time', salary: '$65k - $80k', status: 'Active', description: 'Guide grieving families through structured bereavement care and monthly support circles.', postedDate: '2026-08-18' },
-      { id: 3, title: 'Funeral Assistant & Care Officer', department: 'Administration', location: 'Rogers, MN', type: 'Full-Time', salary: '$22 - $28 / hr', status: 'Active', description: 'Welcome families, manage chapel reception, and coordinate obituary publishing.', postedDate: '2026-08-15' },
+      { id: 1, title: 'Licensed Funeral Director & Mortician', department: 'Mortuary Care', location: 'Apple Valley, MN', type: 'Full-Time', salary: '$75k - $95k', status: 'Active', description: 'Oversee ceremonial coordination, embalming, care arrangements, and funeral service execution.', postedDate: '2026-08-20' },
+      { id: 2, title: 'Certified Grief Counselor', department: 'Family Guidance', location: 'Apple Valley, MN', type: 'Full-Time', salary: '$65k - $80k', status: 'Active', description: 'Guide grieving families through structured bereavement care and monthly support circles.', postedDate: '2026-08-18' },
+      { id: 3, title: 'Funeral Assistant & Care Officer', department: 'Administration', location: 'Apple Valley, MN', type: 'Full-Time', salary: '$22 - $28 / hr', status: 'Active', description: 'Welcome families, manage chapel reception, and coordinate obituary publishing.', postedDate: '2026-08-15' },
       { id: 4, title: 'Mortuary Logistics Specialist', department: 'Logistics', location: 'Twin Cities, MN', type: 'Full-Time', salary: '$24 - $30 / hr', status: 'Active', description: 'Perform prompt, dignified transfers and maintain executive service fleet.', postedDate: '2026-08-12' }
     ];
   });
@@ -175,7 +175,7 @@ export default function CmsDashboard() {
   const [isCreatingJob, setIsCreatingJob] = useState(false);
   const [jobTitleInput, setJobTitleInput] = useState('');
   const [jobDeptInput, setJobDeptInput] = useState('Mortuary Care');
-  const [jobLocInput, setJobLocInput] = useState('Rogers, MN');
+  const [jobLocInput, setJobLocInput] = useState('Apple Valley, MN');
   const [jobTypeInput, setJobTypeInput] = useState('Full-Time');
   const [jobSalaryInput, setJobSalaryInput] = useState('');
   const [jobDescInput, setJobDescInput] = useState('');

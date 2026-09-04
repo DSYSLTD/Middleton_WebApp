@@ -34,7 +34,7 @@ export default function CustomOrder() {
 
   // Delivery state
   const [coDeliveryType, setCoDeliveryType] = useState('Funeral Home / Service Chapel');
-  const [coDeliveryAddress, setCoDeliveryAddress] = useState('Middleton Funeral Chapel, 123 Chapel Way, Rogers MN');
+  const [coDeliveryAddress, setCoDeliveryAddress] = useState('Middleton Funeral Chapel, 14850 Garret Ave, Apple Valley MN 55124');
   const [coDeliveryDate, setCoDeliveryDate] = useState(new Date().toISOString().split('T')[0]);
   const [coNotes, setCoNotes] = useState('');
 

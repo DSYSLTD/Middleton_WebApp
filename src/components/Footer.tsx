@@ -114,7 +114,7 @@ export default function Footer() {
             </ul>
             <h3 className="font-sans font-bold text-[10px] text-gray-900 mb-3 uppercase tracking-[0.2em] opacity-40">Minnesota Service Areas</h3>
             <p className="text-gray-500 text-xs leading-relaxed">
-              Proudly serving Rogers and the surrounding Twin Cities metropolitan area.
+              Proudly serving Apple Valley and the surrounding Twin Cities metropolitan area.
             </p>
           </div>
 
@@ -124,7 +124,7 @@ export default function Footer() {
             <div className="space-y-3 text-[14px] text-gray-600 mb-8">
               <p>
                 <strong className="text-gray-900 block mb-1">Location:</strong> 
-                24173 Williams Rd.<br/>Rogers 55374
+                14850 Garret Ave.<br/>Apple Valley MN 55124
               </p>
               <p>
                 <strong className="text-gray-900 block mb-1">Email:</strong>

@@ -145,7 +145,7 @@ export function ModalProvider({ children }: { children: React.ReactNode }) {
       fileText = `
 ===================================================================
 MIDDLETON FUNERAL SERVICES
-24173 Williams Rd, Rogers, MN 55374 | Phone: (952) 486-2871
+14850 Garret Ave, Apple Valley, MN 55124 | Phone: (952) 486-2871
 Official Website: https://middletonfunerals.com
 
 OFFICIAL GUIDE & DOCUMENTATION: ${doc.title.toUpperCase()}
@@ -159,7 +159,7 @@ throughout Minnesota.
 
 KEY CONTACT & 24/7 DISPATCH INFORMATION:
 - 24/7 Immediate Response Phone: (952) 486-2871
-- Office Location: 24173 Williams Rd, Rogers, MN 55374
+- Office Location: 14850 Garret Ave, Apple Valley, MN 55124
 - Email Support: inquiries@middletonfunerals.com
 
 ESSENTIAL STEPS COVERED IN THIS GUIDE:
@@ -662,7 +662,7 @@ please call our 24/7 hotline at (952) 486-2871.
 
                     <div className="bg-purple-50 p-4 rounded-2xl border border-purple-100 text-xs text-gray-700 leading-relaxed font-light">
                       <strong className="font-bold text-[#411548] block mb-1">Confidentiality Guarantee:</strong>
-                      Your information is securely encrypted and submitted directly to our licensed funeral directors in Rogers, MN.
+                      Your information is securely encrypted and submitted directly to our licensed funeral directors in Apple Valley, MN.
                     </div>
 
                     <div className="flex gap-3 pt-2">

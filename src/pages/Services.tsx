@@ -256,7 +256,7 @@ export default function Services() {
           <div className="container mx-auto px-4 max-w-7xl flex flex-col md:flex-row items-center justify-between gap-12 relative z-10 w-full">
             <div className="text-center md:text-left">
                <h3 className="text-4xl font-serif font-black uppercase mb-4 tracking-tight text-white">Need immediate Support?</h3>
-               <p className="text-white font-light text-xl max-w-xl leading-relaxed text-white">Our counselors are available for a private consultation 24/7 in Rogers and surrounding areas.</p>
+               <p className="text-white font-light text-xl max-w-xl leading-relaxed text-white">Our counselors are available for a private consultation 24/7 in Apple Valley and surrounding areas.</p>
             </div>
             <Link to="/contact" className="bg-white text-[#411548] px-14 py-6 rounded-full font-black text-sm tracking-widest uppercase hover:scale-105 transition-all shadow-xl">
                Connect With Us
