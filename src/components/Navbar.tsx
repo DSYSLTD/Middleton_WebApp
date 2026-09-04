@@ -13,27 +13,39 @@ export default function Navbar() {
   const [isTopShopOpen, setIsTopShopOpen] = useState(false);
   const shopMenuRef = useRef<HTMLDivElement>(null);
 
-  // Close top shop dropdown upon downward scroll or outside click
+  // Close top shop dropdown upon outside click or scroll, keeping it visible otherwise
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 20) {
-        setIsTopShopOpen(false);
+    if (!isTopShopOpen) return;
+
+    const handleScroll = (event: Event) => {
+      if (shopMenuRef.current && event.target && shopMenuRef.current.contains(event.target as Node)) {
+        return;
       }
+      setIsTopShopOpen(false);
     };
 
-    const handleClickOutside = (event: MouseEvent) => {
+    const handleClickOutside = (event: MouseEvent | TouchEvent) => {
       if (shopMenuRef.current && !shopMenuRef.current.contains(event.target as Node)) {
         setIsTopShopOpen(false);
       }
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
+    document.addEventListener('scroll', handleScroll, { passive: true });
     document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('touchstart', handleClickOutside);
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      document.removeEventListener('scroll', handleScroll);
       document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('touchstart', handleClickOutside);
     };
-  }, []);
+  }, [isTopShopOpen]);
+
+  useEffect(() => {
+    setIsTopShopOpen(false);
+  }, [location.pathname]);
 
   const mainNavLinks = [
     { name: 'Home', path: '/' },
@@ -89,13 +101,15 @@ export default function Navbar() {
             {/* Shop Categories Dropdown in Top Bar */}
             <div 
               ref={shopMenuRef}
-              className="relative group" 
+              className="relative" 
               onMouseEnter={() => setIsTopShopOpen(true)}
-              onMouseLeave={() => setIsTopShopOpen(false)}
             >
               <button 
+                type="button"
                 className="flex items-center gap-1.5 hover:text-gray-200 transition-colors whitespace-nowrap shrink-0 text-white font-black uppercase py-0.5 cursor-pointer"
-                onClick={() => setIsTopShopOpen(!isTopShopOpen)}
+                onClick={() => setIsTopShopOpen((prev) => !prev)}
+                aria-expanded={isTopShopOpen}
+                aria-haspopup="true"
               >
                 <ShoppingBag size={11} className="shrink-0 text-white/80" />
                 <span>Marketplace</span>

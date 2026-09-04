@@ -1,5 +1,4 @@
-import { useState, useEffect } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { ModalProvider } from './context/ModalContext';
 import { AuthProvider } from './context/AuthContext';
 import Layout from './layouts/Layout';
@@ -46,7 +45,15 @@ import CustomOrder from './pages/CustomOrder';
 import LegalHeritagePlanning from './pages/LegalHeritagePlanning';
 import CmsDashboard from './pages/CmsDashboard';
 import Careers from './pages/Careers';
-import { getActiveSubdomain, SubdomainType } from './utils/subdomain';
+
+// Subdomain route mapping
+const subdomainPages: Record<string, string> = {
+  "blog.middletonfuneralservices.com": "/blog",
+  "flowers.middletonfuneralservices.com": "/flowers",
+  "shop.middletonfuneralservices.com": "/shop",
+  "sympathygifts.middletonfuneralservices.com": "/flowers",
+  "memorialessentials.middletonfuneralservices.com": "/shop",
+};
 
 // Migrate any legacy hash routes to clean URLs
 if (typeof window !== 'undefined' && window.location.hash.startsWith('#/')) {
@@ -54,34 +61,14 @@ if (typeof window !== 'undefined' && window.location.hash.startsWith('#/')) {
   window.history.replaceState(null, '', cleanPath);
 }
 
-function IndexRoute() {
-  const [subdomain, setSubdomain] = useState<SubdomainType>(() => getActiveSubdomain());
-
-  useEffect(() => {
-    const handleSubdomainChange = () => {
-      setSubdomain(getActiveSubdomain());
-    };
-    window.addEventListener('hashchange', handleSubdomainChange);
-    window.addEventListener('popstate', handleSubdomainChange);
-    return () => {
-      window.removeEventListener('hashchange', handleSubdomainChange);
-      window.removeEventListener('popstate', handleSubdomainChange);
-    };
-  }, []);
-
-  if (subdomain === 'sympathygifts') {
-    return <Flowers />;
-  }
-  if (subdomain === 'memorialessentials') {
-    return <Shop />;
-  }
-  if (subdomain === 'blog') {
-    return <Blog />;
-  }
-  return <Home />;
-}
-
 export default function App() {
+  const currentHostname = typeof window !== 'undefined' ? window.location.hostname.toLowerCase() : '';
+  const subdomainRoute =
+    subdomainPages[currentHostname] ||
+    (currentHostname.startsWith('blog.') ? '/blog' : null) ||
+    (currentHostname.startsWith('flowers.') || currentHostname.startsWith('sympathygifts.') ? '/flowers' : null) ||
+    (currentHostname.startsWith('shop.') || currentHostname.startsWith('memorialessentials.') ? '/shop' : null);
+
   return (
     <AuthProvider>
       <ModalProvider>
@@ -89,7 +76,16 @@ export default function App() {
           <ScrollToTop />
           <Routes>
             <Route path="/" element={<Layout />}>
-              <Route index element={<IndexRoute />} />
+              <Route
+                index
+                element={
+                  subdomainRoute ? (
+                    <Navigate to={subdomainRoute} replace />
+                  ) : (
+                    <Home />
+                  )
+                }
+              />
               <Route path="how-we-work" element={<HowWeWork />} />
               <Route path="book-appointment" element={<BookAppointment />} />
               <Route path="services" element={<Services />} />

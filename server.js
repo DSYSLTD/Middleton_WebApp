@@ -1,60 +1,36 @@
-import express from 'express';
-import path from 'path';
-import fs from 'fs';
-import { fileURLToPath } from 'url';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const express = require("express");
+const path = require("path");
 
 const app = express();
-const PORT = process.env.PORT || 3000;
-const DIST_DIR = path.resolve(__dirname, 'dist');
+const port = process.env.PORT || 3000;
 
-// Serve static assets from dist
-app.use(express.static("dist"));
-app.use(express.static(path.resolve(__dirname, 'dist')));
+const distPath = path.join(__dirname, "dist");
 
-// Optional API / Health check endpoint
-app.get('/api/health', (req, res) => {
-  res.json({ status: 'ok', timestamp: new Date().toISOString() });
-});
+app.use(express.static(distPath));
 
-// SPA fallback for clean URLs: serve index.html for all routes
-app.get("*", (req, res) => {
-  const indexPath = path.resolve("dist/index.html");
-  if (fs.existsSync(indexPath)) {
-    res.sendFile(indexPath);
-  } else {
-    res.status(503).send(`
-      <!DOCTYPE html>
-      <html lang="en">
-        <head>
-          <meta charset="utf-8">
-          <title>Application Starting</title>
-          <style>
-            body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; background: #fdfaf7; color: #411548; }
-            .card { background: white; padding: 2.5rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); text-align: center; max-width: 480px; }
-            h1 { margin-top: 0; font-size: 1.5rem; }
-            p { color: #555; line-height: 1.6; }
-            code { background: #f3e8f4; padding: 0.2rem 0.4rem; border-radius: 4px; font-size: 0.9em; }
-          </style>
-        </head>
-        <body>
-          <div class="card">
-            <h1>Build Required</h1>
-            <p>The frontend build is not yet generated in the <code>dist/</code> folder.</p>
-            <p>Please run <code>npm run build</code> in the project directory to generate the static files.</p>
-          </div>
-        </body>
-      </html>
-    `);
+const subdomainRoutes = {
+  "blog.middletonfuneralservices.com": "/blog",
+  "flowers.middletonfuneralservices.com": "/flowers",
+  "shop.middletonfuneralservices.com": "/shop",
+};
+
+// Keep the subdomain mapping available to the frontend.
+app.get("/", (req, res, next) => {
+  const route = subdomainRoutes[req.hostname];
+
+  if (route) {
+    res.sendFile(path.join(distPath, "index.html"));
+    return;
   }
+
+  next();
 });
 
-// Start listening on all available network interfaces
-const HOST = process.env.HOST || '0.0.0.0';
-app.listen(Number(PORT) || 3000, HOST, () => {
-  console.log(`Server listening on http://${HOST}:${PORT}`);
+// Required for React Router clean URLs such as /blog and /shop.
+app.get(/.*/, (req, res) => {
+  res.sendFile(path.join(distPath, "index.html"));
 });
 
-export default app;
+app.listen(port, "0.0.0.0", () => {
+  console.log(`Server running on port ${port}`);
+});
