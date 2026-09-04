@@ -11,8 +11,8 @@ export default function PreFooterContact() {
     {
       icon: <Mail size={20} className="text-[#411548]" />,
       label: "Email address",
-      value: "info@middletonfunerals.com",
-      href: "mailto:info@middletonfunerals.com"
+      value: "inquiries@middletonfunerals.com",
+      href: "mailto:inquiries@middletonfunerals.com"
     },
     {
       icon: <MapPin size={20} className="text-[#411548]" />,

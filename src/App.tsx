@@ -48,6 +48,19 @@ import CmsDashboard from './pages/CmsDashboard';
 import Careers from './pages/Careers';
 import { getActiveSubdomain, SubdomainType } from './utils/subdomain';
 
+// Auto-sync pathname into hash route for static/Hostinger Apache SPA environments
+if (typeof window !== 'undefined') {
+  const pathname = window.location.pathname;
+  if (
+    pathname &&
+    pathname !== '/' &&
+    !pathname.includes('.') &&
+    !window.location.hash
+  ) {
+    window.location.replace('/#' + pathname + window.location.search);
+  }
+}
+
 function IndexRoute() {
   const [subdomain, setSubdomain] = useState<SubdomainType>(() => getActiveSubdomain());
 

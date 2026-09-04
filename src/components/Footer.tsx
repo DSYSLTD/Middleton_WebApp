@@ -128,7 +128,7 @@ export default function Footer() {
               </p>
               <p>
                 <strong className="text-gray-900 block mb-1">Email:</strong>
-                <a href="mailto:info@middletonfunerals.com" className="hover:text-[#411548] hover:underline">info@middletonfunerals.com</a>
+                <a href="mailto:inquiries@middletonfunerals.com" className="hover:text-[#411548] hover:underline">inquiries@middletonfunerals.com</a>
               </p>
             </div>
             

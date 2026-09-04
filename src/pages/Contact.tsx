@@ -114,7 +114,7 @@ export default function Contact() {
                  </div>
                  <div className="flex items-center gap-4 text-sm font-black uppercase tracking-widest text-[#411548] group-hover:text-black transition-colors">
                     <Mail size={20} />
-                    <span>info@middletonfunerals.com</span>
+                    <a href="mailto:inquiries@middletonfunerals.com" className="hover:underline">inquiries@middletonfunerals.com</a>
                  </div>
               </div>
             </div>

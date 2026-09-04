@@ -160,7 +160,7 @@ throughout Minnesota.
 KEY CONTACT & 24/7 DISPATCH INFORMATION:
 - 24/7 Immediate Response Phone: (952) 486-2871
 - Office Location: 24173 Williams Rd, Rogers, MN 55374
-- Email Support: info@middletonfunerals.com
+- Email Support: inquiries@middletonfunerals.com
 
 ESSENTIAL STEPS COVERED IN THIS GUIDE:
 1. Immediate Authorities & Medical Examiner Reporting Procedures in Minnesota
