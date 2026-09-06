@@ -25,7 +25,11 @@ import {
   Quote,
   ChevronRight,
   ArrowRight,
-  Clock
+  Clock,
+  ArrowUpRight,
+  Feather,
+  Mail,
+  Phone
 } from 'lucide-react';
 import CustomIcon from '../components/CustomIcon';
 import { DRIVE_IMAGES } from '../utils/driveImages';
@@ -52,63 +56,6 @@ export default function AboutUs() {
       desc: "Embracing technology and sustainable options to provide modern, meaningful ways to celebrate and honor your loved one's unique legacy through virtual memorials and eco-conscious rites.", 
       icon: <CustomIcon size={40} /> 
     },
-  ];
-
-  const workSteps = [
-    { 
-      step: "01", 
-      title: "Reporting the Death", 
-      desc: "When a loved one passes away, it is important to notify the proper Minnesota authorities: the county medical examiner or coroner. Middleton Funeral Services coordinates this process, ensuring the death is correctly documented, reported, and that no step is missed.",
-      icon: <CustomIcon size={28} />
-    },
-    { 
-      step: "02", 
-      title: "Initial Consultation & Support", 
-      desc: "Our team meets with your family to discuss your loved one's wishes and your family's needs. We provide a compassionate, supportive environment to explore all funeral and cremation options, guiding you toward informed decisions with no pressure.",
-      icon: <CustomIcon size={28} />
-    },
-    { 
-      step: "03", 
-      title: "Acquiring Legal Documents", 
-      desc: "We secure all required documentation in compliance with Minnesota state regulations, including: Death Certificate (legal, insurance, and estate purposes); Burial Permit (required for all interments); and Cremation Authorization (required before cremation proceeds). All paperwork is completed accurately and submitted on time.",
-      icon: <CustomIcon size={28} />
-    },
-    { 
-      step: "04", 
-      title: "Planning the Service", 
-      desc: "Together we design a personalized funeral or memorial service. Options include traditional funeral services (visitation, ceremony, burial); cremation services with personalized ceremonies; green burials; virtual or hybrid memorial services; and pre-planned arrangements for future needs.",
-      icon: <CustomIcon size={28} />
-    },
-    { 
-      step: "05", 
-      title: "Selecting Products", 
-      desc: "We assist you in selecting meaningful items: caskets (traditional, eco-friendly, or customized); urns in a wide range of styles and materials; keepsakes for lasting mementoes; and casket adornment options for personalized floral and decorative arrangements.",
-      icon: <CustomIcon size={28} />
-    },
-    { 
-      step: "06", 
-      title: "Transportation & Livery", 
-      desc: "Our professional livery fleet ensures dignified, seamless transportation throughout: hearses for the deceased, limousines for immediate family, and shuttle or coach services for larger groups. All transportation is managed respectfully from place of death to burial site or crematory.",
-      icon: <CustomIcon size={28} />
-    },
-    { 
-      step: "07", 
-      title: "International Repatriation", 
-      desc: "For families needing to send a loved one to another country, we manage all required international transport documentation, coordinate with foreign embassies and consulates, secure permissions and approvals, and liaise with airlines and overseas funeral homes to ensure safe and dignified repatriation.",
-      icon: <CustomIcon size={28} />
-    },
-    { 
-      step: "08", 
-      title: "Burial or Cremation", 
-      desc: "Once arrangements are finalized, we proceed with the chosen disposition: burials are handled end-to-end including cemetery transportation and interment; cremations are managed in full compliance with Minnesota state law with ashes returned in an urn of your choice.",
-      icon: <CustomIcon size={28} />
-    },
-    { 
-      step: "09", 
-      title: "Grief Support & Aftercare", 
-      desc: "Our commitment extends well beyond the service. We provide ongoing grief counselling in Apple Valley and surrounding areas; access to support groups and online bereavement communities; guidance on bereavement leave and legal matters; and annual memorial planning for tributes and remembrance gatherings.",
-      icon: <CustomIcon size={28} />
-    }
   ];
 
   const assurances = [
@@ -347,95 +294,479 @@ export default function AboutUs() {
         </div>
       </section>
 
-      {/* HOW WE WORK */}
-      <section className="py-24 bg-white overflow-hidden">
+      {/* HOW WE WORK - INSPIRED BY BRAND WORKFLOW */}
+      <section className="bg-[#FAF9F6] py-24 lg:py-32 overflow-hidden border-y border-[#411548]/10">
         <div className="container mx-auto px-4 max-w-7xl">
-           <div className="text-center mb-20">
-              <span className="inline-flex items-center gap-4 text-xs font-bold tracking-[0.2em] uppercase text-[#411548] mb-4">
-                 <span className="w-12 h-[2px] bg-[#411548]"></span> HOW WE WORK <span className="w-12 h-[2px] bg-[#411548]"></span>
-              </span>
-              <h2 className="font-serif text-4xl md:text-5xl text-[#411548] uppercase font-black tracking-tight mb-8 text-center max-w-4xl mx-auto leading-tight">
-                Removing Complexity From <br/> <span className="text-black">Life's Most Difficult Moments</span>
+          
+          {/* Top Hero / Next Step Section */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            {/* Left Column: Heading & Context */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="lg:col-span-7 text-left"
+            >
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-12 h-[2px] bg-[#411548]"></div>
+                <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#411548]">
+                  HERE FOR THE NEXT STEP
+                </span>
+                <div className="w-12 h-[2px] bg-[#411548]"></div>
+              </div>
+
+              <h2 className="font-serif text-xl sm:text-3xl md:text-4xl lg:text-[38px] xl:text-[46px] text-[#411548] uppercase font-black tracking-tight leading-[1.18] mb-6">
+                <span className="whitespace-nowrap block">A Steady Hand For The</span>
+                <span className="text-black whitespace-nowrap block">Moments That Matter Most</span>
               </h2>
-              <p className="text-black max-w-3xl mx-auto font-light leading-relaxed text-lg mb-12">
-                Our streamlined, compassionate process removes complexity from one of life's most difficult moments. Here is what to expect when you contact Middleton Funeral Services.
+
+              <p className="text-black font-light text-lg md:text-xl leading-relaxed max-w-xl mb-8">
+                Middleton Funeral Services offers thoughtful funeral, cremation, and remembrance support for every family — with clear choices, practical guidance, and room to grieve.
               </p>
-           </div>
 
-           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative">
-              {workSteps.map((s, i) => (
-                <motion.div 
-                  key={i} 
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.05 }}
-                  className="bg-white p-10 rounded-[3rem] border border-[#411548]/5 shadow-sm flex flex-col relative group hover:shadow-2xl transition-all h-full hover:-translate-y-2 duration-500"
+              <div className="flex flex-wrap items-center gap-4">
+                <Link 
+                  to="/book-appointment" 
+                  className="inline-flex items-center gap-2 bg-[#411548] hover:bg-black text-white px-8 md:px-10 py-4 md:py-5 rounded-full font-black text-xs tracking-widest uppercase transition-all shadow-xl hover:scale-105 group"
                 >
-                   <div className="absolute top-8 right-10 w-12 h-12 bg-black text-white rounded-full flex items-center justify-center font-serif font-black italic shadow-lg z-10 group-hover:bg-[#411548] transition-colors">
-                      {s.step}
-                   </div>
-                   <div className="w-20 h-20 bg-[#411548]/5 rounded-3xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform p-3">
-                      <CustomIcon size={40} />
-                   </div>
-                   <h3 className="font-bold text-black text-xl mb-6 uppercase tracking-tight leading-tight group-hover:text-[#411548] transition-colors">{s.title}</h3>
-                   <p className="text-black text-sm font-light leading-relaxed">{s.desc}</p>
-                </motion.div>
-              ))}
-           </div>
+                  Request An Appointment 
+                  <ArrowUpRight size={16} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </Link>
+                <Link 
+                  to="/services" 
+                  className="inline-flex items-center justify-center bg-white hover:bg-[#411548] hover:text-white text-[#411548] border-2 border-[#411548] px-8 md:px-10 py-4 md:py-5 rounded-full font-black text-xs tracking-widest uppercase transition-all shadow-xl"
+                >
+                  Explore Services
+                </Link>
+              </div>
 
-           {/* HIGH-IMPACT DIRECTOR CONSULTATION HUB */}
-            <div className="mt-24 px-4 md:px-0">
-               <div className="bg-[#411548] py-20 px-8 md:px-16 rounded-[4rem] text-center text-white relative overflow-hidden shadow-2xl border border-white/10">
-                  <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
-                  <div className="relative z-10 max-w-5xl mx-auto">
-                    <span className="inline-flex items-center gap-2 bg-white/10 text-white px-6 py-2 rounded-full text-xs font-bold tracking-[0.25em] uppercase mb-6 border border-white/20">
-                      <CustomIcon size={14} variant="white" /> 24/7 Licensed Care & Support
+              <div className="flex items-center gap-2.5 text-xs text-black/70 font-light mt-6">
+                <CustomIcon size={16} className="shrink-0" />
+                <span>Immediate guidance when you need it, with no pressure to decide everything today.</span>
+              </div>
+            </motion.div>
+
+            {/* Right Column: Elevated "A Clear Next Step" Card */}
+            <motion.div 
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="lg:col-span-5"
+            >
+              <div className="bg-white rounded-[3rem] p-8 lg:p-10 border-2 border-[#411548]/10 shadow-xl relative">
+                <div className="flex items-center justify-between gap-4 mb-4">
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-[2px] bg-[#411548]"></div>
+                    <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#411548]">
+                      A CLEAR NEXT STEP
                     </span>
-                    <h3 className="text-3xl md:text-5xl font-serif font-black uppercase mb-6 tracking-tight text-white leading-tight">
-                      Personalized Family Consultations <br className="hidden md:block"/> & 24/7 Dedicated Care
-                    </h3>
-                    <p className="text-white/90 max-w-3xl mx-auto mb-10 text-lg md:text-xl font-light leading-relaxed">
-                      Every family's journey is unique. Our licensed funeral directors meet with you in person, by phone, or virtually to provide compassionate guidance, answer every question, and help you arrange a dignified tribute with complete price transparency.
-                    </p>
+                  </div>
+                  <div className="w-9 h-9 rounded-full bg-[#411548]/10 text-[#411548] flex items-center justify-center">
+                    <CustomIcon size={18} />
+                  </div>
+                </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 text-left">
-                      <div className="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/15">
-                        <div className="w-10 h-10 bg-white text-[#411548] rounded-xl flex items-center justify-center font-bold mb-4 shadow-md">
-                          <Clock size={20} />
-                        </div>
-                        <h4 className="font-serif font-black text-white text-base uppercase tracking-tight mb-1">24/7 Director Availability</h4>
-                        <p className="text-white/70 text-xs font-light leading-relaxed">Direct, immediate support at any hour from our experienced local team.</p>
-                      </div>
+                <h3 className="font-serif text-2xl lg:text-3xl text-[#411548] font-black uppercase tracking-tight mb-8 leading-snug">
+                  You Do Not Have To <br/>
+                  <span className="text-black">Carry It Alone</span>
+                </h3>
 
-                      <div className="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/15">
-                        <div className="w-10 h-10 bg-white text-[#411548] rounded-xl flex items-center justify-center font-bold mb-4 shadow-md">
-                          <ShieldCheck size={20} />
-                        </div>
-                        <h4 className="font-serif font-black text-white text-base uppercase tracking-tight mb-1">FTC Itemized Clarity</h4>
-                        <p className="text-white/70 text-xs font-light leading-relaxed">Complete itemized price lists provided upfront with zero pressure or hidden fees.</p>
-                      </div>
-
-                      <div className="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/15">
-                        <div className="w-10 h-10 bg-white text-[#411548] rounded-xl flex items-center justify-center font-bold mb-4 shadow-md">
-                          <Heart size={20} />
-                        </div>
-                        <h4 className="font-serif font-black text-white text-base uppercase tracking-tight mb-1">Tailored Ceremonies</h4>
-                        <p className="text-white/70 text-xs font-light leading-relaxed">Honoring all religious, military, cultural, and personal preferences with reverence.</p>
-                      </div>
+                <div className="space-y-6">
+                  <div className="flex items-start gap-4">
+                    <div className="w-8 h-8 rounded-full bg-[#411548] text-white text-xs font-black flex items-center justify-center shrink-0 mt-0.5 shadow-md">
+                      1
                     </div>
-
-                    <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-                      <Link to="/book-appointment" className="bg-white text-[#411548] px-10 py-5 rounded-full font-black text-xs tracking-widest uppercase hover:bg-gray-100 transition-all shadow-2xl hover:scale-105 whitespace-nowrap inline-flex items-center justify-center min-w-[260px]">
-                         Book Consultation
-                      </Link>
-                      <Link to="/prices" className="bg-white/10 text-white border border-white/30 px-10 py-5 rounded-full font-black text-xs tracking-widest uppercase hover:bg-white/20 transition-all backdrop-blur-md whitespace-nowrap inline-flex items-center justify-center min-w-[260px]">
-                         View Price List
-                      </Link>
+                    <div>
+                      <h4 className="font-serif text-lg font-black text-[#411548] uppercase tracking-tight mb-1">
+                        Tell Us What You Need
+                      </h4>
+                      <p className="text-black/80 text-sm font-light leading-relaxed">
+                        A first conversation can be as simple as, &quot;What do we do now?&quot;
+                      </p>
                     </div>
                   </div>
-               </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-8 h-8 rounded-full bg-[#411548] text-white text-xs font-black flex items-center justify-center shrink-0 mt-0.5 shadow-md">
+                      2
+                    </div>
+                    <div>
+                      <h4 className="font-serif text-lg font-black text-[#411548] uppercase tracking-tight mb-1">
+                        See Your Options Clearly
+                      </h4>
+                      <p className="text-black/80 text-sm font-light leading-relaxed">
+                        We explain the arrangements, products, and costs in plain language with transparent pricing.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-8 h-8 rounded-full bg-[#411548] text-white text-xs font-black flex items-center justify-center shrink-0 mt-0.5 shadow-md">
+                      3
+                    </div>
+                    <div>
+                      <h4 className="font-serif text-lg font-black text-[#411548] uppercase tracking-tight mb-1">
+                        Make Space For Remembrance
+                      </h4>
+                      <p className="text-black/80 text-sm font-light leading-relaxed">
+                        A meaningful service, a private goodbye, or something tailored in between.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="pt-6 mt-8 border-t border-[#411548]/10 flex items-center gap-3 text-xs text-black font-semibold">
+                  <CustomIcon size={18} className="shrink-0" />
+                  <span>Respectful, transparent, and shaped around your family.</span>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* 3-Column Metric / Value Banner */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="border-y border-[#411548]/15 py-10 my-16 lg:my-24"
+          >
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 divide-y md:divide-y-0 md:divide-x divide-[#411548]/15">
+              <div className="pt-6 md:pt-0 first:pt-0">
+                <span className="font-serif font-black text-2xl text-[#411548] tracking-widest block mb-2">01</span>
+                <h4 className="font-serif text-xl font-black text-[#411548] uppercase tracking-tight mb-2">
+                  Clarity In A Difficult Time
+                </h4>
+                <p className="text-black font-light text-base leading-relaxed">Plain answers and itemized choices.</p>
+              </div>
+              <div className="pt-6 md:pt-0 md:pl-10">
+                <span className="font-serif font-black text-2xl text-[#411548] tracking-widest block mb-2">02</span>
+                <h4 className="font-serif text-xl font-black text-[#411548] uppercase tracking-tight mb-2">
+                  Care At Your Pace
+                </h4>
+                <p className="text-black font-light text-base leading-relaxed">Support for today, or planning for later.</p>
+              </div>
+              <div className="pt-6 md:pt-0 md:pl-10">
+                <span className="font-serif font-black text-2xl text-[#411548] tracking-widest block mb-2">03</span>
+                <h4 className="font-serif text-xl font-black text-[#411548] uppercase tracking-tight mb-2">
+                  A Place To Remember
+                </h4>
+                <p className="text-black font-light text-base leading-relaxed">Thoughtful ways to honor a life.</p>
+              </div>
             </div>
+          </motion.div>
+
+          {/* Support for the Whole Family */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start my-16 lg:my-24">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="lg:col-span-5"
+            >
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-[2px] bg-[#411548]"></div>
+                <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#411548]">
+                  SUPPORT FOR THE WHOLE FAMILY
+                </span>
+              </div>
+              <h3 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#411548] uppercase font-black tracking-tight leading-tight mb-6">
+                Practical Help, <br />
+                <span className="text-black">Held With Care</span>
+              </h3>
+              <p className="text-black font-light text-lg leading-relaxed">
+                There is no single right way to say goodbye. We help you understand what is possible, then make room for what matters to you.
+              </p>
+            </motion.div>
+
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="lg:col-span-7 space-y-5"
+            >
+              <Link 
+                to="/services" 
+                className="flex items-start gap-5 p-7 rounded-[2rem] bg-white border-2 border-[#411548]/5 hover:border-[#411548] hover:shadow-xl transition-all group"
+              >
+                <div className="w-12 h-12 rounded-2xl bg-[#411548]/5 text-[#411548] flex items-center justify-center shrink-0 group-hover:bg-[#411548] transition-colors">
+                  <CustomIcon size={24} variant="hover-white" />
+                </div>
+                <div className="flex-1 min-w-0 pr-2">
+                  <div className="flex items-center justify-between gap-2">
+                    <h4 className="font-serif text-xl font-black text-[#411548] uppercase tracking-tight group-hover:text-black transition-colors">
+                      Funeral & Memorial Planning
+                    </h4>
+                    <ArrowUpRight size={18} className="text-[#411548] group-hover:text-black transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 shrink-0" />
+                  </div>
+                  <p className="text-black/80 text-sm font-light leading-relaxed mt-1">
+                    A calm, guided conversation about ceremonies, logistics, and the details that make a farewell personal.
+                  </p>
+                </div>
+              </Link>
+
+              <Link 
+                to="/services" 
+                className="flex items-start gap-5 p-7 rounded-[2rem] bg-white border-2 border-[#411548]/5 hover:border-[#411548] hover:shadow-xl transition-all group"
+              >
+                <div className="w-12 h-12 rounded-2xl bg-[#411548]/5 text-[#411548] flex items-center justify-center shrink-0 group-hover:bg-[#411548] transition-colors">
+                  <CustomIcon size={24} variant="hover-white" />
+                </div>
+                <div className="flex-1 min-w-0 pr-2">
+                  <div className="flex items-center justify-between gap-2">
+                    <h4 className="font-serif text-xl font-black text-[#411548] uppercase tracking-tight group-hover:text-black transition-colors">
+                      Cremation & Burial Arrangements
+                    </h4>
+                    <ArrowUpRight size={18} className="text-[#411548] group-hover:text-black transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 shrink-0" />
+                  </div>
+                  <p className="text-black/80 text-sm font-light leading-relaxed mt-1">
+                    Flexible options, explained plainly, with transparent itemized pricing for different budgets and wishes.
+                  </p>
+                </div>
+              </Link>
+
+              <Link 
+                to="/obituaries" 
+                className="flex items-start gap-5 p-7 rounded-[2rem] bg-white border-2 border-[#411548]/5 hover:border-[#411548] hover:shadow-xl transition-all group"
+              >
+                <div className="w-12 h-12 rounded-2xl bg-[#411548]/5 text-[#411548] flex items-center justify-center shrink-0 group-hover:bg-[#411548] transition-colors">
+                  <CustomIcon size={24} variant="hover-white" />
+                </div>
+                <div className="flex-1 min-w-0 pr-2">
+                  <div className="flex items-center justify-between gap-2">
+                    <h4 className="font-serif text-xl font-black text-[#411548] uppercase tracking-tight group-hover:text-black transition-colors">
+                      Obituaries & Remembrance
+                    </h4>
+                    <ArrowUpRight size={18} className="text-[#411548] group-hover:text-black transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 shrink-0" />
+                  </div>
+                  <p className="text-black/80 text-sm font-light leading-relaxed mt-1">
+                    Create an online place to share a life, gather stories, and give family and friends a way to remember together.
+                  </p>
+                </div>
+              </Link>
+            </motion.div>
+          </div>
+
+          {/* How We Help - One step at a time is enough */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start my-16 lg:my-24 pt-16 lg:pt-20 border-t border-[#411548]/15">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="lg:col-span-5"
+            >
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-[2px] bg-[#411548]"></div>
+                <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#411548]">
+                  HOW WE HELP
+                </span>
+              </div>
+              <h3 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#411548] uppercase font-black tracking-tight leading-tight mb-6">
+                One Step At A Time <br />
+                <span className="text-black">Is Enough</span>
+              </h3>
+              <p className="text-black font-light text-lg leading-relaxed">
+                When everything feels urgent, a clear path can make the next decision feel possible. Our process keeps the details moving while you stay close to your family.
+              </p>
+            </motion.div>
+
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="lg:col-span-7 divide-y divide-[#411548]/15"
+            >
+              <div className="pb-8 first:pt-0">
+                <div className="flex items-start gap-6">
+                  <span className="font-serif text-4xl sm:text-5xl text-[#411548] font-black shrink-0 w-14 pt-0.5">
+                    01
+                  </span>
+                  <div>
+                    <h4 className="font-serif text-2xl font-black text-[#411548] uppercase tracking-tight mb-2">
+                      Start With A Call
+                    </h4>
+                    <p className="text-black font-light text-base leading-relaxed">
+                      Tell us what has happened and what you need right now. We will meet you at your pace.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="py-8">
+                <div className="flex items-start gap-6">
+                  <span className="font-serif text-4xl sm:text-5xl text-[#411548] font-black shrink-0 w-14 pt-0.5">
+                    02
+                  </span>
+                  <div>
+                    <h4 className="font-serif text-2xl font-black text-[#411548] uppercase tracking-tight mb-2">
+                      Choose What Feels Right
+                    </h4>
+                    <p className="text-black font-light text-base leading-relaxed">
+                      We lay out the options, costs, and next steps clearly so your family can decide without pressure.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="pt-8">
+                <div className="flex items-start gap-6">
+                  <span className="font-serif text-4xl sm:text-5xl text-[#411548] font-black shrink-0 w-14 pt-0.5">
+                    03
+                  </span>
+                  <div>
+                    <h4 className="font-serif text-2xl font-black text-[#411548] uppercase tracking-tight mb-2">
+                      Keep The Care Going
+                    </h4>
+                    <p className="text-black font-light text-base leading-relaxed">
+                      From the ceremony to grief resources and practical follow-up, support does not end at goodbye.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Strategic Planning Ahead Banner */}
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.98 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="my-16 lg:my-24 bg-[#411548] rounded-[3.5rem] p-10 sm:p-14 lg:p-20 text-white relative overflow-hidden shadow-2xl"
+          >
+            <div className="absolute right-0 top-0 w-96 h-96 bg-white/[0.04] rounded-full translate-x-1/3 -translate-y-1/3 pointer-events-none"></div>
+            <div className="absolute left-1/3 bottom-0 w-80 h-80 bg-black/20 rounded-full translate-y-1/2 pointer-events-none"></div>
+            
+            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-10 relative z-10">
+              <div className="max-w-xl">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-[1px] bg-white/40"></div>
+                  <span className="text-xs uppercase tracking-[0.25em] text-white/80 font-bold">
+                    PLANNING AHEAD
+                  </span>
+                </div>
+                <h3 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-white font-black uppercase tracking-tight leading-tight mb-4">
+                  Give Your Future Family <br />
+                  <span className="italic font-light lowercase text-white">a little more certainty</span>
+                </h3>
+                <p className="text-white/90 text-lg md:text-xl font-light leading-relaxed">
+                  Pre-planning lets you record your preferences, explore budget levels, and leave fewer hard decisions for the people you love.
+                </p>
+              </div>
+              <div className="shrink-0">
+                <Link 
+                  to="/pre-planning" 
+                  className="inline-flex items-center justify-center gap-2 bg-white hover:scale-105 text-[#411548] px-8 md:px-10 py-4 md:py-5 rounded-full font-black text-xs tracking-widest uppercase transition-all shadow-2xl group whitespace-nowrap"
+                >
+                  Request A Conversation 
+                  <ArrowUpRight size={16} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </Link>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Beyond the Service */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 py-16 lg:py-20 border-t border-[#411548]/15">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="lg:col-span-5"
+            >
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-[2px] bg-[#411548]"></div>
+                <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#411548]">
+                  BEYOND THE SERVICE
+                </span>
+              </div>
+              <h3 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#411548] uppercase font-black tracking-tight leading-tight">
+                Remembrance <br />
+                <span className="text-black">Keeps Unfolding</span>
+              </h3>
+            </motion.div>
+
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-8"
+            >
+              <div className="bg-white p-7 rounded-[2rem] border-2 border-[#411548]/5">
+                <div className="flex items-center gap-2.5 mb-2">
+                  <CustomIcon size={18} className="shrink-0" />
+                  <h4 className="font-serif text-xl font-black text-[#411548] uppercase tracking-tight">
+                    Grief Education
+                  </h4>
+                </div>
+                <p className="text-black/80 font-light text-base leading-relaxed">
+                  Gentle, practical resources for the days and months when support still matters.
+                </p>
+              </div>
+
+              <div className="bg-white p-7 rounded-[2rem] border-2 border-[#411548]/5">
+                <div className="flex items-center gap-2.5 mb-2">
+                  <CustomIcon size={18} className="shrink-0" />
+                  <h4 className="font-serif text-xl font-black text-[#411548] uppercase tracking-tight">
+                    Thoughtful Gestures
+                  </h4>
+                </div>
+                <p className="text-black/80 font-light text-base leading-relaxed">
+                  Sympathy gifts and memorial details that help friends and family show up with care.
+                </p>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Whenever You Are Ready */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="py-20 lg:py-28 text-center max-w-4xl mx-auto px-4 border-t border-[#411548]/15"
+          >
+            <div className="flex items-center justify-center gap-4 mb-6">
+              <div className="w-12 h-[2px] bg-[#411548]"></div>
+              <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#411548]">
+                WHENEVER YOU ARE READY
+              </span>
+              <div className="w-12 h-[2px] bg-[#411548]"></div>
+            </div>
+
+            <h3 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-black text-[#411548] uppercase tracking-tight leading-tight mb-6">
+              We Are Here To Make The <br className="hidden sm:block"/>
+              <span className="text-black">Next Step Feel A Little Lighter</span>
+            </h3>
+
+            <p className="text-black font-light text-lg md:text-xl leading-relaxed mb-10 max-w-2xl mx-auto">
+              Reach out for immediate guidance, a thoughtful planning conversation, or simply a clear answer to a difficult question.
+            </p>
+
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <a 
+                href="mailto:contact@middletonfuneralservices.com" 
+                className="inline-flex items-center gap-2 bg-[#411548] hover:bg-black text-white px-8 md:px-10 py-4 md:py-5 rounded-full font-black text-xs tracking-widest uppercase transition-all shadow-xl hover:scale-105 group"
+              >
+                <Mail size={16} /> Email Our Care Team 
+                <ArrowUpRight size={16} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </a>
+              <a 
+                href="tel:9524862871" 
+                className="inline-flex items-center gap-2 bg-white hover:bg-[#411548] hover:text-white text-[#411548] border-2 border-[#411548] px-8 md:px-10 py-4 md:py-5 rounded-full font-black text-xs tracking-widest uppercase transition-all shadow-xl"
+              >
+                <Phone size={15} /> (952) 486-2871
+              </a>
+            </div>
+
+            <div className="mt-8 text-xs font-semibold tracking-widest uppercase text-black/60">
+              middletonfuneralservices.com • 14850 Garret Ave, Apple Valley MN
+            </div>
+          </motion.div>
+
         </div>
       </section>
 
