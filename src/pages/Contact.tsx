@@ -26,11 +26,37 @@ export default function Contact() {
     serviceType: '',
     message: ''
   });
+  const [submitted, setSubmitted] = useState(false);
+  const [mailtoUrl, setMailtoUrl] = useState('');
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Lead collected:', formData);
-    alert('Thank you for contacting us. Our team will reach out to you shortly.');
+    const recipient = 'inquiries@middletonfuneralservices.com';
+    const typeLabel = formData.serviceType 
+      ? formData.serviceType.charAt(0).toUpperCase() + formData.serviceType.slice(1)
+      : 'General Inquiry';
+    const subject = encodeURIComponent(`Website Inquiry: ${typeLabel} - ${formData.name || 'Visitor'}`);
+    const body = encodeURIComponent(
+      `Hello Middleton Funeral Services Care Team,\n\n` +
+      `Here are the details from the website inquiry form:\n\n` +
+      `• Name: ${formData.name}\n` +
+      `• Email: ${formData.email}\n` +
+      `• Phone: ${formData.phone || 'Not provided'}\n` +
+      `• Inquiry Type: ${typeLabel}\n\n` +
+      `• Message:\n${formData.message}\n\n` +
+      `Thank you,\n${formData.name}`
+    );
+    const link = `mailto:${recipient}?subject=${subject}&body=${body}`;
+    setMailtoUrl(link);
+    setSubmitted(true);
+
+    // Open user's default email client
+    const a = document.createElement('a');
+    a.href = link;
+    a.style.display = 'none';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
   };
 
   return (
@@ -114,7 +140,7 @@ export default function Contact() {
                  </div>
                  <div className="flex items-center gap-4 text-sm font-black uppercase tracking-widest text-[#411548] group-hover:text-black transition-colors">
                     <Mail size={20} />
-                    <a href="mailto:inquiries@middletonfunerals.com" className="hover:underline">inquiries@middletonfunerals.com</a>
+                    <a href="mailto:inquiries@middletonfuneralservices.com" className="hover:underline">inquiries@middletonfuneralservices.com</a>
                  </div>
               </div>
             </div>
@@ -147,6 +173,39 @@ export default function Contact() {
           <div className="flex flex-col lg:flex-row gap-12">
              <div className="flex-1">
                 <h2 className="text-2xl md:text-3xl font-serif font-black text-[#411548] uppercase tracking-tight mb-6">Send Us A Message</h2>
+                {submitted ? (
+                  <div className="bg-[#411548]/5 border-2 border-[#411548]/15 rounded-[2.5rem] p-8 md:p-12 text-center space-y-6">
+                    <div className="w-16 h-16 bg-[#411548] text-white rounded-2xl mx-auto flex items-center justify-center shadow-lg">
+                      <CustomIcon size={28} variant="white" />
+                    </div>
+                    <div>
+                      <h3 className="font-serif text-2xl md:text-3xl font-black uppercase text-[#411548] tracking-tight mb-2">
+                        Thank You, {formData.name || 'Friend'}
+                      </h3>
+                      <p className="text-black/80 text-sm md:text-base font-light max-w-lg mx-auto leading-relaxed">
+                        Your message has been addressed to <strong className="font-bold text-[#411548]">inquiries@middletonfuneralservices.com</strong>. We will review your inquiry and respond promptly.
+                      </p>
+                    </div>
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
+                      <a 
+                        href={mailtoUrl}
+                        className="inline-flex items-center gap-2 bg-[#411548] hover:bg-black text-white px-8 py-4 rounded-full font-black text-xs tracking-widest uppercase transition-all shadow-md hover:scale-105"
+                      >
+                        <Mail size={16} /> Open Email App
+                      </a>
+                      <button 
+                        type="button"
+                        onClick={() => {
+                          setSubmitted(false);
+                          setFormData({ name: '', email: '', phone: '', serviceType: '', message: '' });
+                        }}
+                        className="inline-flex items-center justify-center bg-white hover:bg-gray-100 text-black border border-gray-300 px-6 py-4 rounded-full font-bold text-xs tracking-widest uppercase transition-all shadow-sm"
+                      >
+                        Send Another Message
+                      </button>
+                    </div>
+                  </div>
+                ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="group">
@@ -226,6 +285,7 @@ export default function Contact() {
                     Submit Inquiry
                   </button>
                 </form>
+                )}
              </div>
 
              <div className="lg:w-[400px]">

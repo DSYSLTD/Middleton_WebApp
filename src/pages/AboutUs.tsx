@@ -316,9 +316,13 @@ export default function AboutUs() {
                 <div className="w-12 h-[2px] bg-[#411548]"></div>
               </div>
 
-              <h2 className="font-serif text-xl sm:text-3xl md:text-4xl lg:text-[38px] xl:text-[46px] text-[#411548] uppercase font-black tracking-tight leading-[1.18] mb-6">
-                <span className="whitespace-nowrap block">A Steady Hand For The</span>
-                <span className="text-black whitespace-nowrap block">Moments That Matter Most</span>
+              <h2 className="font-serif text-[#411548] uppercase font-black tracking-tight mb-6 w-fit">
+                <span className="whitespace-nowrap block text-[clamp(21.5px,5.2vw,53px)] leading-[1.15]">
+                  A Steady Hand For The
+                </span>
+                <span className="text-black whitespace-nowrap block text-[clamp(17px,4.11vw,41.9px)] leading-[1.15]">
+                  Moments That Matter Most
+                </span>
               </h2>
 
               <p className="text-black font-light text-lg md:text-xl leading-relaxed max-w-xl mb-8">
@@ -748,7 +752,7 @@ export default function AboutUs() {
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a 
-                href="mailto:contact@middletonfuneralservices.com" 
+                href="mailto:inquiries@middletonfuneralservices.com" 
                 className="inline-flex items-center gap-2 bg-[#411548] hover:bg-black text-white px-8 md:px-10 py-4 md:py-5 rounded-full font-black text-xs tracking-widest uppercase transition-all shadow-xl hover:scale-105 group"
               >
                 <Mail size={16} /> Email Our Care Team 
