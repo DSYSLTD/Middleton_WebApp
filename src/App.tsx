@@ -46,6 +46,10 @@ import CustomOrder from './pages/CustomOrder';
 import LegalHeritagePlanning from './pages/LegalHeritagePlanning';
 import CmsDashboard from './pages/CmsDashboard';
 import Careers from './pages/Careers';
+import JobApplication from './pages/JobApplication';
+import CareerApplication from './pages/CareerApplication';
+import AuthorProfile from './pages/AuthorProfile';
+import Article from './pages/Article';
 
 // Subdomain page selection mapping
 const subdomainPages: Record<string, React.ReactElement> = {
@@ -138,6 +142,11 @@ export default function App() {
               <Route path="faq" element={<FAQ />} />
               <Route path="resources" element={<Resources />} />
               <Route path="careers" element={<Careers />} />
+              <Route path="job-application" element={<JobApplication />} />
+              <Route path="apply" element={<JobApplication />} />
+              <Route path="career-application" element={<CareerApplication />} />
+              <Route path="blog/:slug" element={<Article />} />
+              <Route path="author/:authorId" element={<AuthorProfile />} />
               <Route path="terms" element={<TermsAndConditions />} />
               <Route path="regulatory-disclosure" element={<RegulatoryDisclosure />} />
             </Route>

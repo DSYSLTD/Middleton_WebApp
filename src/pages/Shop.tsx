@@ -32,11 +32,14 @@ import {
   Fingerprint,
   Calendar,
   ShieldCheck,
-  FileText
+  FileText,
+  Download
 } from 'lucide-react';
 import { ProductCardSkeleton } from '../components/Skeleton';
 import { useModals } from '../context/ModalContext';
 import { DoveIcon } from '../components/DoveIcon';
+import { MEMORIAL_PRODUCTS, Product } from '../data/memorialProductsData';
+import { getPriceListDoc, generatePriceListDocText } from '../data/priceListsData';
 
 export interface Product {
   id: number;

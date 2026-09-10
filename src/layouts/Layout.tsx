@@ -14,15 +14,16 @@ export default function Layout({ children }: { children?: React.ReactNode } = {}
   const isGriefSupportPage = location.pathname === '/grief-support' || location.pathname.startsWith('/grief') || location.pathname === '/join-support-group';
   const isResourcesPage = location.pathname === '/resources' || location.pathname.startsWith('/resources');
   const isShopOrFlowersPage = location.pathname === '/shop' || location.pathname.startsWith('/shop') || location.pathname === '/flowers' || location.pathname.startsWith('/flowers');
+  const isCmsPage = location.pathname === '/cms' || location.pathname === '/dashboard' || location.pathname.startsWith('/cms') || location.pathname.startsWith('/dashboard');
 
   return (
-    <div className="flex flex-col min-h-screen relative overflow-x-hidden">
+    <div className={`flex flex-col min-h-screen relative overflow-x-hidden ${isCmsPage ? 'cms-mode scrollbar-none' : ''}`}>
       <Navbar />
-      <main className={`flex-grow ${isShopOrFlowersPage ? '' : 'pb-16 md:pb-0'}`}>
+      <main className={`flex-grow ${isShopOrFlowersPage || isCmsPage ? '' : 'pb-16 md:pb-0'}`}>
         {children || <Outlet />}
       </main>
 
-      {!isPrePlanningPage && (
+      {!isPrePlanningPage && !isCmsPage && (
         <section className="bg-white py-16 border-t border-gray-100">
            <div className="container mx-auto px-4 max-w-7xl">
               <div className="bg-[#411548] rounded-[3rem] p-10 md:p-16 text-white flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden shadow-2xl">
@@ -52,12 +53,12 @@ export default function Layout({ children }: { children?: React.ReactNode } = {}
         </section>
       )}
 
-      <PreFooterContact />
+      {!isCmsPage && <PreFooterContact />}
       <Footer />
-      <CookieConsent />
+      {!isCmsPage && <CookieConsent />}
       
       {/* Mobile Bottom Bar (Legal & Compliance) */}
-      {!isContactPage && !isShopOrFlowersPage && (
+      {!isContactPage && !isShopOrFlowersPage && !isCmsPage && (
         <div className="md:hidden fixed bottom-0 left-0 right-0 h-16 bg-white border-t border-gray-100 flex items-center justify-around z-40 px-2 shadow-[0_-2px_10px_rgba(0,0,0,0.05)]">
           <Link to="/privacy-policy" className="flex flex-col items-center gap-1 text-[10px] font-bold text-gray-500 text-center">
              <CustomIcon size={18} /> Privacy <br/> policy
@@ -72,7 +73,7 @@ export default function Layout({ children }: { children?: React.ReactNode } = {}
       )}
       
       {/* STICKY ACTION (MOBILE UX REPLICA) */}
-      {!isContactPage && !isGriefSupportPage && !isResourcesPage && !isShopOrFlowersPage && (
+      {!isContactPage && !isGriefSupportPage && !isResourcesPage && !isShopOrFlowersPage && !isCmsPage && (
         <div className="fixed bottom-[72px] md:bottom-8 right-6 z-40 flex flex-col space-y-3">
           <Link
             to="/book-appointment"

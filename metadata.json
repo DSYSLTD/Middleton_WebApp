@@ -1,6 +1,6 @@
 {
-  "name": "Remix Middletonllcwebapp",
-  "description": "Imported from GitHub: PNESH-CODER/Middletonllcwebapp",
+  "name": "Middleton Funeral Services",
+  "description": "Dignified funeral care, cremation arrangements, pre-planning, bereavement support, and career portal for Middleton Funeral & Cremation Services.",
   "requestFramePermissions": [],
   "majorCapabilities": [
     "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
