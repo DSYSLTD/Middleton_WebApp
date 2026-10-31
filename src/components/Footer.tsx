@@ -152,15 +152,39 @@ export default function Footer() {
 
       <div className="bg-[#411548] py-6 pb-20 md:pb-6 border-t border-white/10">
         <div className="container mx-auto px-4 max-w-7xl">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-white/80 text-xs font-medium tracking-wider">
-            <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
-              <Link to="/privacy-policy" className="hover:text-white transition-colors">Privacy policy</Link>
-              <Link to="/terms" className="hover:text-white transition-colors">Terms and conditions</Link>
-              <Link to="/regulatory-disclosure" className="hover:text-white transition-colors">Regulatory disclosure</Link>
-            </div>
-            <p>
+          <div className="flex flex-wrap justify-center items-center gap-x-4 lg:gap-x-5 gap-y-2 text-white/80 text-xs font-medium tracking-wider text-center">
+            <Link to="/privacy-policy" className="hover:text-white transition-colors whitespace-nowrap">Privacy policy</Link>
+            <span className="text-white/30 hidden sm:inline">|</span>
+            <Link to="/terms" className="hover:text-white transition-colors whitespace-nowrap">Terms and conditions</Link>
+            <span className="text-white/30 hidden sm:inline">|</span>
+            <Link to="/regulatory-disclosure" className="hover:text-white transition-colors whitespace-nowrap">Regulatory disclosure</Link>
+            <span className="text-white/30 hidden sm:inline">|</span>
+            <span className="whitespace-nowrap">
               © {new Date().getFullYear()} Middleton Funeral Services | All rights reserved
-            </p>
+            </span>
+            <span className="text-white/30 hidden sm:inline">|</span>
+            <span className="whitespace-nowrap">
+              Website developed by{' '}
+              <a
+                href="https://www.dsysl.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white hover:text-amber-200 underline underline-offset-4 font-semibold transition-colors"
+                title="Dimensional Systems Limited - www.dsysl.com"
+              >
+                Dimensional Systems Limited
+              </a>
+              {' | '}
+              <a
+                href="https://patrickmunene.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white hover:text-amber-200 underline underline-offset-4 font-semibold transition-colors"
+                title="Patrick Munene - patrickmunene.com"
+              >
+                Patrick Munene
+              </a>
+            </span>
           </div>
         </div>
       </div>

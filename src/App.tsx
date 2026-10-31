@@ -50,6 +50,7 @@ import JobApplication from './pages/JobApplication';
 import CareerApplication from './pages/CareerApplication';
 import AuthorProfile from './pages/AuthorProfile';
 import Article from './pages/Article';
+import Sitemap from './pages/Sitemap';
 
 // Subdomain page selection mapping
 const subdomainPages: Record<string, React.ReactElement> = {
@@ -149,6 +150,7 @@ export default function App() {
               <Route path="author/:authorId" element={<AuthorProfile />} />
               <Route path="terms" element={<TermsAndConditions />} />
               <Route path="regulatory-disclosure" element={<RegulatoryDisclosure />} />
+              <Route path="sitemap" element={<Sitemap />} />
             </Route>
           </Routes>
         </BrowserRouter>

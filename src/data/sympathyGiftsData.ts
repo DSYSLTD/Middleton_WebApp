@@ -110,6 +110,30 @@ export const SYMPATHY_GIFTS: SympathyGiftProduct[] = [
     description: "Subtle country garden arrangement of lavender larkspur, white daisies, veronica, and Queen Anne's lace designed for floor or altar display.",
     purpose: "Thinking of You"
   },
+  {
+    id: 109,
+    name: "Eternal Peace White Hydrangea & Rose Pedestal Urn",
+    price: 195.00,
+    category: "Flowers",
+    image: "https://images.unsplash.com/photo-1508615039623-a25605d2b022?auto=format&fit=crop&w=600&q=80",
+    rating: 4.9,
+    reviewsCount: 36,
+    badge: "Altar Pedestal",
+    description: "Architectural arrangement of pristine white hydrangeas, avalanche roses, Italian ruscus, and dusty miller in a classic fluted memorial urn.",
+    purpose: "Memory Lives On"
+  },
+  {
+    id: 110,
+    name: "Gentle Whisper Lavender & Cream Spray",
+    price: 165.00,
+    category: "Flowers",
+    image: "https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=600&q=80",
+    rating: 4.8,
+    reviewsCount: 22,
+    badge: "Condolence Spray",
+    description: "Soft pastel harmony combining soft lilac roses, cream stock, lisianthus, and silver eucalyptus, designed to express gentle heartfelt sympathy.",
+    purpose: "Thinking of You"
+  },
 
   // ==================== 2. MEMORIAL CANDLES (8 items) ====================
   {
@@ -209,6 +233,31 @@ export const SYMPATHY_GIFTS: SympathyGiftProduct[] = [
     reviewsCount: 19,
     badge: "100% Pure Beeswax",
     description: "Natural honeycomb rolled tapers that burn cleanly without smoke, accompanied by glazed ceramic candle stands.",
+    purpose: "Peace & Comfort"
+  },
+  {
+    id: 209,
+    name: "Memorial Lantern with LED Flickering Pillar",
+    price: 65.00,
+    category: "Memorial Candles",
+    image: "https://images.unsplash.com/photo-1512909006721-3d6018887383?auto=format&fit=crop&w=600&q=80",
+    rating: 4.9,
+    reviewsCount: 47,
+    badge: "Keepsake Lantern",
+    description: "Matte black metal lantern with bevelled glass panes, inscribed with 'In Loving Memory', containing a warm flameless LED flickering timer candle.",
+    purpose: "Memory Lives On",
+    isPersonalizable: true
+  },
+  {
+    id: 210,
+    name: "Serenity Aromatherapy Lavender Memorial Candle",
+    price: 32.00,
+    category: "Memorial Candles",
+    image: "https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&w=600&q=80",
+    rating: 4.8,
+    reviewsCount: 39,
+    badge: "Calming Botanicals",
+    description: "Hand-poured coconut apricot wax infused with French lavender, chamomile, and cedarwood to bring gentle tranquility to the grieving home.",
     purpose: "Peace & Comfort"
   },
 
@@ -314,6 +363,32 @@ export const SYMPATHY_GIFTS: SympathyGiftProduct[] = [
     description: "Rich top-grain bonded leather memory album with 50 acid-free slip-in pages, gold foil lettering, and silk page ribbon marker.",
     purpose: "Memory Lives On"
   },
+  {
+    id: 309,
+    name: "Curved Crystal Beveled Memorial Photo Block",
+    price: 62.00,
+    category: "Photo Gifts",
+    image: "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=600&q=80",
+    rating: 4.9,
+    reviewsCount: 42,
+    badge: "Optical Crystal",
+    description: "Freestanding heavy optical crystal with subsurface laser portrait engraving that catches natural light beautifully.",
+    purpose: "Personalized",
+    isPersonalizable: true
+  },
+  {
+    id: 310,
+    name: "Natural Walnut Keepsake Box with Photo Tile Inlay",
+    price: 74.00,
+    category: "Photo Gifts",
+    image: "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=600&q=80",
+    rating: 5.0,
+    reviewsCount: 28,
+    badge: "Solid American Walnut",
+    description: "Handcrafted solid walnut memory box with a gloss ceramic photo tile lid inlay, velvet lined storage interior, and brass hinges.",
+    purpose: "Memory Lives On",
+    isPersonalizable: true
+  },
 
   // ==================== 4. PLANTS & GARDEN (8 items) ====================
   {
@@ -411,6 +486,31 @@ export const SYMPATHY_GIFTS: SympathyGiftProduct[] = [
     reviewsCount: 23,
     badge: "Outdoor Sanctuary",
     description: "Two-piece weatherproof concrete bird bath with sculpted peaceful dove medallion, creating a tranquil memorial sanctuary in the home garden.",
+    purpose: "Peace & Comfort"
+  },
+  {
+    id: 409,
+    name: "Living Memorial Flowering Magnolia Sapling Kit",
+    price: 82.00,
+    category: "Plants & Garden",
+    image: "https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=600&q=80",
+    rating: 4.9,
+    reviewsCount: 37,
+    badge: "Tree of Remembrance",
+    description: "Ready-to-plant young sweetbay magnolia sapling shipped in a biodegradable burlap root wrap, with engraved brass garden marker and planting guide.",
+    purpose: "Memory Lives On",
+    isPersonalizable: true
+  },
+  {
+    id: 410,
+    name: "Engraved Bluestone Memorial Garden Stepping Stone",
+    price: 56.00,
+    category: "Plants & Garden",
+    image: "https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=600&q=80",
+    rating: 4.8,
+    reviewsCount: 45,
+    badge: "Weatherproof Stone",
+    description: "Solid textured Pennsylvania bluestone deep-carved with 'Those we love don't go away, they walk beside us every day.' Sealed against frost.",
     purpose: "Peace & Comfort"
   },
 
@@ -515,6 +615,31 @@ export const SYMPATHY_GIFTS: SympathyGiftProduct[] = [
     purpose: "Personalized",
     isPersonalizable: true
   },
+  {
+    id: 509,
+    name: "Memorial Fingerprint Impression Silver Pendant",
+    price: 145.00,
+    category: "Keepsakes",
+    image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=600&q=80",
+    rating: 5.0,
+    reviewsCount: 54,
+    badge: "Custom Cast Silver",
+    description: "Solid sterling silver oval pendant cast with the exact tactile fingerprint swirl of your loved one, strung on an 18-inch box chain.",
+    purpose: "Personalized",
+    isPersonalizable: true
+  },
+  {
+    id: 510,
+    name: "Handcrafted Hand-Blown Glass Comfort Heart",
+    price: 48.00,
+    category: "Keepsakes",
+    image: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80",
+    rating: 4.9,
+    reviewsCount: 38,
+    badge: "Blown Glass Art",
+    description: "Weighted smooth palm-sized cobalt and iridescent glass heart crafted to hold in your hands during prayer, meditation, and quiet remembrance.",
+    purpose: "Peace & Comfort"
+  },
 
   // ==================== 6. SYMPATHY CARDS (8 items) ====================
   {
@@ -613,5 +738,29 @@ export const SYMPATHY_GIFTS: SympathyGiftProduct[] = [
     badge: "Laminated Pack",
     description: "Heavy laminated wallet-size memorial cards with 23rd Psalm, Beatitudes, and peaceful Minnesota landscape imagery.",
     purpose: "Peace & Comfort"
+  },
+  {
+    id: 609,
+    name: "Pressed Botanical Wildflower Sympathy Cards (Set of 6)",
+    price: 26.00,
+    category: "Sympathy Cards",
+    image: "https://images.unsplash.com/photo-1586075010923-2dd4570fb338?auto=format&fit=crop&w=600&q=80",
+    rating: 5.0,
+    reviewsCount: 39,
+    badge: "Artisan Pressed Florals",
+    description: "Real pressed prairie wildflowers mounted onto heavy parchment paper, sealed with a translucent vellum envelope.",
+    purpose: "Memory Lives On"
+  },
+  {
+    id: 610,
+    name: "Golden Dawn Sunset Condolence Note Cards (Pack of 10)",
+    price: 22.00,
+    category: "Sympathy Cards",
+    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80",
+    rating: 4.8,
+    reviewsCount: 27,
+    badge: "Blank Inside Set",
+    description: "Serene lakeside sunset photograph by Minnesota landscape artists printed on rich velvet matte cardstock with gold envelopes.",
+    purpose: "Thinking of You"
   }
 ];

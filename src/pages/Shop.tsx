@@ -38,7 +38,7 @@ import {
 import { ProductCardSkeleton } from '../components/Skeleton';
 import { useModals } from '../context/ModalContext';
 import { DoveIcon } from '../components/DoveIcon';
-import { MEMORIAL_PRODUCTS, Product } from '../data/memorialProductsData';
+import { MEMORIAL_PRODUCTS } from '../data/memorialProductsData';
 import { getPriceListDoc, generatePriceListDocText } from '../data/priceListsData';
 
 export interface Product {

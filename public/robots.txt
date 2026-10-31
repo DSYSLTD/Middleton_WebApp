@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /cms
+Disallow: /dashboard
+
+Sitemap: https://middletonfuneralservices.com/sitemap.xml

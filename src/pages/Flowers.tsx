@@ -242,15 +242,15 @@ export default function Flowers() {
             <h2 className="text-xl md:text-2xl font-serif font-black text-[#1A081D]">Find a Meaningful Way to Show You Care</h2>
           </div>
 
-          <div className="flex items-center justify-center flex-wrap gap-2 md:gap-4">
+          <div className="flex items-center justify-center flex-wrap gap-2 md:gap-3">
             {[
-              { id: 'All', label: 'All Gifts', icon: '✨' },
-              { id: 'Flowers', label: 'Flowers', icon: '🌸' },
-              { id: 'Memorial Candles', label: 'Memorial Candles', icon: '🕯️' },
-              { id: 'Photo Gifts', label: 'Photo Gifts', icon: '🖼️' },
-              { id: 'Plants & Garden', label: 'Plants & Garden', icon: '🌿' },
-              { id: 'Keepsakes', label: 'Keepsakes', icon: '💝' },
-              { id: 'Sympathy Cards', label: 'Sympathy Cards', icon: '✉️' },
+              { id: 'All', label: 'All Gifts', icon: '✨', count: SYMPATHY_GIFTS.length },
+              { id: 'Flowers', label: 'Flowers', icon: '🌸', count: SYMPATHY_GIFTS.filter(g => g.category === 'Flowers').length },
+              { id: 'Memorial Candles', label: 'Memorial Candles', icon: '🕯️', count: SYMPATHY_GIFTS.filter(g => g.category === 'Memorial Candles').length },
+              { id: 'Photo Gifts', label: 'Photo Gifts', icon: '🖼️', count: SYMPATHY_GIFTS.filter(g => g.category === 'Photo Gifts').length },
+              { id: 'Plants & Garden', label: 'Plants & Garden', icon: '🌿', count: SYMPATHY_GIFTS.filter(g => g.category === 'Plants & Garden').length },
+              { id: 'Keepsakes', label: 'Keepsakes', icon: '💝', count: SYMPATHY_GIFTS.filter(g => g.category === 'Keepsakes').length },
+              { id: 'Sympathy Cards', label: 'Sympathy Cards', icon: '✉️', count: SYMPATHY_GIFTS.filter(g => g.category === 'Sympathy Cards').length },
             ].map((cat) => {
               const isActive = activeCategory === cat.id;
               return (
@@ -269,6 +269,11 @@ export default function Flowers() {
                 >
                   <span className="text-sm">{cat.icon}</span>
                   <span>{cat.label}</span>
+                  <span className={`text-[10px] px-1.5 py-0.5 rounded-full font-bold ${
+                    isActive ? 'bg-[#411548] text-white' : 'bg-slate-200 text-slate-600'
+                  }`}>
+                    {cat.count}
+                  </span>
                 </button>
               );
             })}
